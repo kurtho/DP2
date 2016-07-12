@@ -1,0 +1,6 @@
+framework module Pods_FBLoginAndShowImage {
+  umbrella header "Pods-FBLoginAndShowImage-umbrella.h"
+
+  export *
+  module * { export * }
+}
