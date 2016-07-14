@@ -17,13 +17,12 @@
 		298FBF7F1D23D32600F03F4E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298FBF7D1D23D32600F03F4E /* FBSDKCoreKit.framework */; };
 		298FBF801D23D32600F03F4E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298FBF7E1D23D32600F03F4E /* FBSDKLoginKit.framework */; };
 		298FBF821D24250500F03F4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298FBF811D24250500F03F4E /* HomeViewController.swift */; };
-		2993C9AF1D2B8CD2009E15C8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2993C9AE1D2B8CD2009E15C8 /* EditProfileViewController.swift */; };
 		299F1A381D2CF4A7008555EF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299F1A371D2CF4A7008555EF /* ProfileViewController.swift */; };
 		299F1A3A1D2CF506008555EF /* ProfileHeadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299F1A391D2CF506008555EF /* ProfileHeadCollectionViewCell.swift */; };
 		29F63A371D30F69C00178065 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F63A361D30F69C00178065 /* ProfileData.swift */; };
-		29F63A581D3227FD00178065 /* EditProilfeImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F63A571D3227FD00178065 /* EditProilfeImageCollectionViewCell.swift */; };
 		29F63A5E1D32A0D300178065 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F63A5D1D32A0D300178065 /* SearchCollectionViewCell.swift */; };
 		29F63A601D32A3EC00178065 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F63A5F1D32A3EC00178065 /* SearchViewController.swift */; };
+		29FB0E5A1D368103005FB3A3 /* EdirProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB0E591D368103005FB3A3 /* EdirProfileTableViewController.swift */; };
 		931E36E7E2676F531E820BF8 /* Pods_FBLoginAndShowImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E084D462799DBC60C12894D /* Pods_FBLoginAndShowImage.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,13 +39,12 @@
 		298FBF7D1D23D32600F03F4E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		298FBF7E1D23D32600F03F4E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		298FBF811D24250500F03F4E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		2993C9AE1D2B8CD2009E15C8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		299F1A371D2CF4A7008555EF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		299F1A391D2CF506008555EF /* ProfileHeadCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeadCollectionViewCell.swift; sourceTree = "<group>"; };
 		29F63A361D30F69C00178065 /* ProfileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
-		29F63A571D3227FD00178065 /* EditProilfeImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProilfeImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		29F63A5D1D32A0D300178065 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		29F63A5F1D32A3EC00178065 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		29FB0E591D368103005FB3A3 /* EdirProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdirProfileTableViewController.swift; sourceTree = "<group>"; };
 		4E084D462799DBC60C12894D /* Pods_FBLoginAndShowImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBLoginAndShowImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5D27BBE88ED9CBA65AE3B7 /* Pods-FBLoginAndShowImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLoginAndShowImage.release.xcconfig"; path = "Pods/Target Support Files/Pods-FBLoginAndShowImage/Pods-FBLoginAndShowImage.release.xcconfig"; sourceTree = "<group>"; };
 		B64927D3D3C5E962BF77A944 /* Pods-FBLoginAndShowImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBLoginAndShowImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FBLoginAndShowImage/Pods-FBLoginAndShowImage.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,8 +111,7 @@
 			children = (
 				298FBF811D24250500F03F4E /* HomeViewController.swift */,
 				299F1A391D2CF506008555EF /* ProfileHeadCollectionViewCell.swift */,
-				2993C9AE1D2B8CD2009E15C8 /* EditProfileViewController.swift */,
-				29F63A571D3227FD00178065 /* EditProilfeImageCollectionViewCell.swift */,
+				29FB0E591D368103005FB3A3 /* EdirProfileTableViewController.swift */,
 			);
 			name = HomeProfile;
 			sourceTree = "<group>";
@@ -281,14 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29F63A581D3227FD00178065 /* EditProilfeImageCollectionViewCell.swift in Sources */,
+				29FB0E5A1D368103005FB3A3 /* EdirProfileTableViewController.swift in Sources */,
 				29F63A601D32A3EC00178065 /* SearchViewController.swift in Sources */,
 				299F1A381D2CF4A7008555EF /* ProfileViewController.swift in Sources */,
 				29F63A5E1D32A0D300178065 /* SearchCollectionViewCell.swift in Sources */,
 				298FBF661D23BB8C00F03F4E /* ViewController.swift in Sources */,
 				298470B31D2A9D4B00913250 /* ProfileImage.swift in Sources */,
 				298FBF641D23BB8C00F03F4E /* AppDelegate.swift in Sources */,
-				2993C9AF1D2B8CD2009E15C8 /* EditProfileViewController.swift in Sources */,
 				298FBF821D24250500F03F4E /* HomeViewController.swift in Sources */,
 				299F1A3A1D2CF506008555EF /* ProfileHeadCollectionViewCell.swift in Sources */,
 				29F63A371D30F69C00178065 /* ProfileData.swift in Sources */,

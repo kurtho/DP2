@@ -10,7 +10,7 @@ import FirebaseAuth
 import Firebase
 import UIKit
 
-class HomeViewController: UIViewController, ChangeFbProfileDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var fbProfilePic: UIImageView!
     @IBOutlet weak var fbName: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
@@ -22,26 +22,18 @@ class HomeViewController: UIViewController, ChangeFbProfileDelegate, UICollectio
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
+    
+    
     func changeProfileImage() {
 //        profileImage.image = UIImage(named: ProfileImageList.pic[2].name)
-        var filePicture = ProfileImageList.pic[0].name
+//        var filePicture = ProfileImageList.pic[0].name
 //如何改變CollectionView裡面四張照片
         
         print("Delegate Image")
         print("ProfileImageList.pic  ~\(ProfileImageList.pic[2].name)")
     }
-    func changeProfileNameLabel() {
-        nameLabel.text = ProfileImageList.pic[1].description
-        print("Delegate name")
-    }
-    
-    func changeProfileAge() {
-        var age = ageLabel
-        print("ageText")
-        
-//這邊age實體化後，EditProfile那什麼拿不到??
-        
-    }
+
     
     
     
@@ -67,10 +59,11 @@ class HomeViewController: UIViewController, ChangeFbProfileDelegate, UICollectio
         return cell
     }
     
+
     
     
     
-//    var profileImage: ProfileImageList!
+    
     
     @IBAction func didTapLogOut(sender: AnyObject) {
         try! FIRAuth.auth()!.signOut()
@@ -83,8 +76,7 @@ class HomeViewController: UIViewController, ChangeFbProfileDelegate, UICollectio
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.fbProfilePic.layer.cornerRadius = self.fbProfilePic.frame.size.width/4
-//        self.fbProfilePic.clipsToBounds = true
+
         self.collectionView.layer.cornerRadius = self.collectionView.frame.size.width/2
         self.collectionView.clipsToBounds = true
         
@@ -128,12 +120,7 @@ class HomeViewController: UIViewController, ChangeFbProfileDelegate, UICollectio
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "homeToEdit" {
-            let editProfile: EditProfileViewController = segue.destinationViewController as! EditProfileViewController
-            editProfile.delegate = self
-        }
-    }
+
     
     /*
     // MARK: - Navigation
