@@ -9,20 +9,35 @@
 import Foundation
 
 class ProfileData: NSObject {
-    var nameLabel: String = ""
-    var ageLabel: String = ""
-    var placeLabel: String = ""
-    var traitLabel: String = ""
-    var contentLabel: String = ""
+    var name: String = ""
+    var age: String = ""
+    var place: String = ""
+    var trait: String = ""
+    var content: String = ""
     
-    init (nameLabel: String, ageLabel: String, placeLabel:String ,traitLabel: String, contentLabel: String){
-        self.nameLabel = nameLabel
-        self.ageLabel = ageLabel
-        self.placeLabel = placeLabel
-        self.traitLabel = traitLabel
-        self.contentLabel = contentLabel
+    init (name: String, age: String, place:String ,trait: String, content: String){
+        self.name = name
+        self.age = age
+        self.place = place
+        self.trait = trait
+        self.content = content
         }
 }
+
+class CurrentUser {
+    static let shareInstance = CurrentUser()
+    var profileData: ProfileData?
+}
+
+class profileList {
+    static let shareInstance = profileList()
+    var basicInfo = [ProfileData]()
+}
+
+
+
+
+
 
 class PetClass {
     var name: String = ""
@@ -31,9 +46,7 @@ class PetClass {
     var id: Int = 0
     var content: String = ""
     var unlock_level: String = ""
-    var popular: Int = 0 
-    
-    
+    var popular: Int = 0
 }
 
 

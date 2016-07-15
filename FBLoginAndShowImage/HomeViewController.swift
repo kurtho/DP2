@@ -30,8 +30,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //        var filePicture = ProfileImageList.pic[0].name
 //如何改變CollectionView裡面四張照片
         
-        print("Delegate Image")
-        print("ProfileImageList.pic  ~\(ProfileImageList.pic[2].name)")
+//        print("Delegate Image")
+//        print("ProfileImageList.pic  ~\(ProfileImageList.pic[2].name)")
     }
 
     
@@ -76,6 +76,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CurrentUser.shareInstance.profileData?.name
 
         self.collectionView.layer.cornerRadius = self.collectionView.frame.size.width/2
         self.collectionView.clipsToBounds = true
@@ -100,17 +102,27 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             // No user is signed in.
         }
 
+
+        
         contentLabel.text = ProfileImageList.pic[0].description
         nameLabel.text = "蒙奇・D・魯夫"
-        ageLabel.text = "30"
+        
+//        ageLabel.text = CurrentUser.shareInstance.profileData?.nameLabel
+        
+        
+        
+        ageLabel.text = petTest.content
         placeLabel.text = "海上"
         traitLabel.text = "吃肉、草帽、橡膠、當上海賊王"
         
     }
+    var petTest = PetClass()
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
+        ageLabel.text = CurrentUser.shareInstance.profileData?.name
+        print("HomeView age~~~\(CurrentUser.shareInstance.profileData?.name)")
     }
     
     override func didReceiveMemoryWarning() {

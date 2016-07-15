@@ -13,45 +13,61 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     @IBOutlet weak var image1: UIImageView!
     @IBAction func headImageAction1(sender: AnyObject) {
         photoPicker()
+        CurrentUser.shareInstance.profileData = profileData
+        CurrentUser.shareInstance.profileData?.name = "13"
         
+        print("EditProfile age~~~\(CurrentUser.shareInstance.profileData?.name)")
     }
+    
+    
+    @IBAction func birth(sender: AnyObject) {
+        showPopUp()
+    }
+    
+    @IBAction func butTest(sender: AnyObject) {
+        showPopUp()
+    }
+    
+    @IBOutlet weak var birthLabel: UILabel!
+    
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        CurrentUser.shareInstance.profileData?.age
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
+        birthLabel.text = CurrentUser.shareInstance.profileData?.age
+        print("birthLabel.text~~~\(birthLabel.text)")
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+    let profileData = ProfileData(name: "", age: "", place: "", trait: "", content: "")
+    
     
     func photoPicker() {
         let photoPicker = UIImagePickerController()
         photoPicker.delegate = self
         photoPicker.sourceType = .PhotoLibrary
-        
         self.presentViewController(photoPicker, animated: true, completion: nil)
     }
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
          image1.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.dismissViewControllerAnimated(true, completion: nil)
+        print("image1.image~~\(image1.image)")
     }
     
-    
 
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = false
-
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // MARK: - Table view data source
 
@@ -62,9 +78,28 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 8
     }
 
+    
+    // MARK: - Pop up edit
+    
+    func showPopUp() {
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sbPopUpID") as! PopUpViewController
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMoveToParentViewController(self)
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
