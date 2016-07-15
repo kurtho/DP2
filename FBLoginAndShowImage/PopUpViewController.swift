@@ -15,7 +15,7 @@ class PopUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBAction func invisibleButton(sender: AnyObject) {
         removeAnimate()
         CurrentUser.shareInstance.profileData = profileData
-        CurrentUser.shareInstance.profileData?.age = birthLabel.text!
+        CurrentUser.shareInstance.profileData?.age = myBirth
         
         print("profileData.age~~\(CurrentUser.shareInstance.profileData?.age)")
     }
@@ -40,6 +40,8 @@ class PopUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        birthLabel.text = CurrentUser.shareInstance.profileData?.age
+
     }
     
     
@@ -96,11 +98,10 @@ class PopUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         let three = pickerData[threeComponent][pickerView.selectedRowInComponent(threeComponent)]
         let four = pickerData[fourComponent][pickerView.selectedRowInComponent(fourComponent)]
         
-        showPicker.text =
-            "生日: " + one + two + "年 " + three + "月 " + four + "日"
-        myBirth = one + two + three + four
+        showPicker.text = "生日: " + one + two + "年 " + three + "月 " + four + "日"
+        myBirth = one + two + "/" + three + "/" + four
         print(myBirth)
-        birthLabel.text = showPicker.text
+//        birthLabel.text = showPicker.text
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

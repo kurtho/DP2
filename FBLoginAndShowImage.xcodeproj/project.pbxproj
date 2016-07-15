@@ -111,8 +111,8 @@
 		29F63A381D31091C00178065 /* HomeProfile */ = {
 			isa = PBXGroup;
 			children = (
-				298FBF811D24250500F03F4E /* HomeViewController.swift */,
 				299F1A391D2CF506008555EF /* ProfileHeadCollectionViewCell.swift */,
+				298FBF811D24250500F03F4E /* HomeViewController.swift */,
 				29FB0E591D368103005FB3A3 /* EdirProfileTableViewController.swift */,
 				294E35A21D37CC8000F36F65 /* PopUpViewController.swift */,
 			);

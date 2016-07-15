@@ -78,6 +78,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         
         CurrentUser.shareInstance.profileData?.name
+        CurrentUser.shareInstance.profileData?.age
 
         self.collectionView.layer.cornerRadius = self.collectionView.frame.size.width/2
         self.collectionView.clipsToBounds = true
@@ -111,7 +112,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         
         
-        ageLabel.text = petTest.content
         placeLabel.text = "海上"
         traitLabel.text = "吃肉、草帽、橡膠、當上海賊王"
         
@@ -121,8 +121,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
-        ageLabel.text = CurrentUser.shareInstance.profileData?.name
-        print("HomeView age~~~\(CurrentUser.shareInstance.profileData?.name)")
+        ageLabel.text = CurrentUser.shareInstance.profileData?.age
+//        print("HomeView age~~~\(CurrentUser.shareInstance.profileData?.name)")
     }
     
     override func didReceiveMemoryWarning() {

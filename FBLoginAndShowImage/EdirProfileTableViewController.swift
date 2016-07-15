@@ -9,29 +9,31 @@
 import UIKit
 
 class EdirProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    let profileData = ProfileData(name: "", age: "", place: "", trait: "", content: "")
+    
 
     @IBOutlet weak var image1: UIImageView!
     @IBAction func headImageAction1(sender: AnyObject) {
         photoPicker()
         CurrentUser.shareInstance.profileData = profileData
         CurrentUser.shareInstance.profileData?.name = "13"
-        
         print("EditProfile age~~~\(CurrentUser.shareInstance.profileData?.name)")
     }
-    
-    
-    @IBAction func birth(sender: AnyObject) {
-        showPopUp()
+    @IBAction func headImageAction2(sender: AnyObject) {
+        photoPicker()
+    }
+    @IBAction func headImageAction3(sender: AnyObject) {
+        photoPicker()
+    }
+    @IBAction func headImageAction4(sender: AnyObject) {
+        photoPicker()
     }
     
-    @IBAction func butTest(sender: AnyObject) {
+    @IBAction func birthEdit(sender: AnyObject) {
         showPopUp()
     }
     
     @IBOutlet weak var birthLabel: UILabel!
-    
-    
-    
     
     
     override func viewDidLoad() {
@@ -43,7 +45,10 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
         birthLabel.text = CurrentUser.shareInstance.profileData?.age
+
+        
         print("birthLabel.text~~~\(birthLabel.text)")
+        print("Curr.share.profi.age~~\(CurrentUser.shareInstance.profileData?.age)")
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,7 +56,6 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     }
     
     
-    let profileData = ProfileData(name: "", age: "", place: "", trait: "", content: "")
     
     
     func photoPicker() {
@@ -64,7 +68,6 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
          image1.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.dismissViewControllerAnimated(true, completion: nil)
-        print("image1.image~~\(image1.image)")
     }
     
 
