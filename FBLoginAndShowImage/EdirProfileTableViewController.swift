@@ -9,14 +9,14 @@
 import UIKit
 
 class EdirProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    let profileData = ProfileData(name: "", age: "", place: "", trait: "", content: "")
+    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "")
     
 
     @IBOutlet weak var image1: UIImageView!
     @IBAction func headImageAction1(sender: AnyObject) {
         photoPicker()
         CurrentUser.shareInstance.profileData = profileData
-        CurrentUser.shareInstance.profileData?.name = "13"
+//        CurrentUser.shareInstance.profileData?.name = "13"
         print("EditProfile age~~~\(CurrentUser.shareInstance.profileData?.name)")
     }
     @IBAction func headImageAction2(sender: AnyObject) {
@@ -29,26 +29,54 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         photoPicker()
     }
     
+    @IBAction func genderEdit(sender: AnyObject) {
+        editGenderPopUp()
+    }
+    @IBOutlet weak var genderLabel: UILabel!
+    
+    
     @IBAction func birthEdit(sender: AnyObject) {
         showPopUp()
     }
-    
     @IBOutlet weak var birthLabel: UILabel!
+    
+    
+    @IBAction func placeEdit(sender: AnyObject) {
+        editPlacePopIp()
+    }
+    
+    @IBOutlet weak var placeLabel: UILabel!
+    
+    @IBAction func relationEdit(sender: AnyObject) {
+        editRelationPopIp()
+    }
+    
+    @IBOutlet weak var relationLabel: UILabel!
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         CurrentUser.shareInstance.profileData?.age
+        CurrentUser.shareInstance.profileData?.gender
+        CurrentUser.shareInstance.profileData?.place
+        CurrentUser.shareInstance.profileData?.relation
 
     }
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
         birthLabel.text = CurrentUser.shareInstance.profileData?.age
-
+        genderLabel.text = CurrentUser.shareInstance.profileData?.gender
+        placeLabel.text = CurrentUser.shareInstance.profileData?.place
+        relationLabel.text = CurrentUser.shareInstance.profileData?.relation
         
         print("birthLabel.text~~~\(birthLabel.text)")
         print("Curr.share.profi.age~~\(CurrentUser.shareInstance.profileData?.age)")
+        loadViewIfNeeded()
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,7 +116,8 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     // MARK: - Pop up edit
     
     func showPopUp() {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sbPopUpID") as! PopUpViewController
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sbPopUpID") as!
+        PopUpViewController
         self.addChildViewController(popOverVC)
         popOverVC.view.frame = self.view.frame
         self.view.addSubview(popOverVC.view)
@@ -96,10 +125,33 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
 
     }
     
+    func editGenderPopUp() {
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sbEditGender") as! EditGenderViewController
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMoveToParentViewController(self)
+        
+    }
     
+    func editPlacePopIp() {
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sbEditPlace") as! EditPlaceViewController
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMoveToParentViewController(self)
+        
+    }
     
-    
-    
+    func editRelationPopIp() {
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sbEditRelation") as!
+            EditRelationViewController
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMoveToParentViewController(self)
+        
+    }
     
     
     

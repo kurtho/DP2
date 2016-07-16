@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		294E35A31D37CC8000F36F65 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E35A21D37CC8000F36F65 /* PopUpViewController.swift */; };
+		294E35E91D3A22DC00F36F65 /* EditGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E35E81D3A22DC00F36F65 /* EditGenderViewController.swift */; };
+		294E35EB1D3A2E5800F36F65 /* EditPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E35EA1D3A2E5800F36F65 /* EditPlaceViewController.swift */; };
+		294E35ED1D3A348300F36F65 /* EditRelationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E35EC1D3A348300F36F65 /* EditRelationViewController.swift */; };
 		298470B31D2A9D4B00913250 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298470B21D2A9D4B00913250 /* ProfileImage.swift */; };
 		298FBF641D23BB8C00F03F4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298FBF631D23BB8C00F03F4E /* AppDelegate.swift */; };
 		298FBF661D23BB8C00F03F4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298FBF651D23BB8C00F03F4E /* ViewController.swift */; };
@@ -29,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		294E35A21D37CC8000F36F65 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		294E35E81D3A22DC00F36F65 /* EditGenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGenderViewController.swift; sourceTree = "<group>"; };
+		294E35EA1D3A2E5800F36F65 /* EditPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPlaceViewController.swift; sourceTree = "<group>"; };
+		294E35EC1D3A348300F36F65 /* EditRelationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRelationViewController.swift; sourceTree = "<group>"; };
 		298470B21D2A9D4B00913250 /* ProfileImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		298FBF601D23BB8C00F03F4E /* FBLoginAndShowImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBLoginAndShowImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		298FBF631D23BB8C00F03F4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +72,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		294E35E71D3A226000F36F65 /* ProfileEdit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ProfileEdit;
+			sourceTree = "<group>";
+		};
 		298470B11D2A9D1500913250 /* LocalFile */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +127,11 @@
 				299F1A391D2CF506008555EF /* ProfileHeadCollectionViewCell.swift */,
 				298FBF811D24250500F03F4E /* HomeViewController.swift */,
 				29FB0E591D368103005FB3A3 /* EdirProfileTableViewController.swift */,
+				294E35E71D3A226000F36F65 /* ProfileEdit */,
 				294E35A21D37CC8000F36F65 /* PopUpViewController.swift */,
+				294E35E81D3A22DC00F36F65 /* EditGenderViewController.swift */,
+				294E35EA1D3A2E5800F36F65 /* EditPlaceViewController.swift */,
+				294E35EC1D3A348300F36F65 /* EditRelationViewController.swift */,
 			);
 			name = HomeProfile;
 			sourceTree = "<group>";
@@ -285,9 +302,12 @@
 				29F63A601D32A3EC00178065 /* SearchViewController.swift in Sources */,
 				299F1A381D2CF4A7008555EF /* ProfileViewController.swift in Sources */,
 				294E35A31D37CC8000F36F65 /* PopUpViewController.swift in Sources */,
+				294E35ED1D3A348300F36F65 /* EditRelationViewController.swift in Sources */,
+				294E35EB1D3A2E5800F36F65 /* EditPlaceViewController.swift in Sources */,
 				29F63A5E1D32A0D300178065 /* SearchCollectionViewCell.swift in Sources */,
 				298FBF661D23BB8C00F03F4E /* ViewController.swift in Sources */,
 				298470B31D2A9D4B00913250 /* ProfileImage.swift in Sources */,
+				294E35E91D3A22DC00F36F65 /* EditGenderViewController.swift in Sources */,
 				298FBF641D23BB8C00F03F4E /* AppDelegate.swift in Sources */,
 				298FBF821D24250500F03F4E /* HomeViewController.swift in Sources */,
 				299F1A3A1D2CF506008555EF /* ProfileHeadCollectionViewCell.swift in Sources */,

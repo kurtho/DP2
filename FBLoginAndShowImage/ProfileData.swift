@@ -10,15 +10,19 @@ import Foundation
 
 class ProfileData: NSObject {
     var name: String = ""
+    var gender: String = ""
     var age: String = ""
     var place: String = ""
+    var relation: String = ""
     var trait: String = ""
     var content: String = ""
     
-    init (name: String, age: String, place:String ,trait: String, content: String){
+    init (name: String, gender: String, age: String, place: String, relation: String ,trait: String, content: String){
         self.name = name
+        self.gender = gender
         self.age = age
         self.place = place
+        self.relation = relation
         self.trait = trait
         self.content = content
         }
