@@ -15,8 +15,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var fbName: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var genderlabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var relationLabel: UILabel!
+    
     @IBOutlet weak var traitLabel: UILabel!
     @IBOutlet weak var fbProfileImage: UIBarButtonItem!
     @IBOutlet weak var contentLabel: UILabel!
@@ -36,11 +39,76 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     
     
+
     
     
+    @IBAction func didTapLogOut(sender: AnyObject) {
+        try! FIRAuth.auth()!.signOut()
+        FBSDKAccessToken.setCurrentAccessToken(nil)
+        
+        let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController : UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("LogginView")
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        CurrentUser.shareInstance.profileData?.name
+        CurrentUser.shareInstance.profileData?.age
+        CurrentUser.shareInstance.profileData?.place
+        CurrentUser.shareInstance.profileData?.relation
+        CurrentUser.shareInstance.profileData?.gender
+        self.collectionView.layer.cornerRadius = self.collectionView.frame.size.width/2
+        self.collectionView.clipsToBounds = true
+        
+        if let user = FIRAuth.auth()?.currentUser {
+            let name = user.displayName
+//            let email = user.email
+            let photoUrl = user.photoURL
+//            let uid = user.uid;
+            
+            self.fbName.text = name
+            if let photoURL = photoUrl {
+                if let data = NSData(contentsOfURL: photoURL) {
+                    self.fbProfilePic.image = UIImage(data: data)
+
+                }
+            }
+                    // Do any additional setup after loading the view.
+
+        } else {
+            // No user is signed in.
+        }
+
+
+        contentLabel.text = ProfileImageList.pic[0].description
+        nameLabel.text = "蒙奇・D・魯夫"
+        
+//        ageLabel.text = CurrentUser.shareInstance.profileData?.nameLabel
+        
+        
+        
+        placeLabel.text = CurrentUser.shareInstance.profileData?.place
+        traitLabel.text = "吃肉、草帽、橡膠、當上海賊王"
+        
+    }
+    var petTest = PetClass()
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
+        ageLabel.text = CurrentUser.shareInstance.profileData?.age
+        placeLabel.text = CurrentUser.shareInstance.profileData?.place
+        genderlabel.text = CurrentUser.shareInstance.profileData?.gender
+        relationLabel.text = CurrentUser.shareInstance.profileData?.relation
+//        print("HomeView age~~~\(CurrentUser.shareInstance.profileData?.name)")
+    }
     
-    
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
+    }
     
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -58,81 +126,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         return cell
     }
-    
-
-    
-    
-    
-    
-    
-    @IBAction func didTapLogOut(sender: AnyObject) {
-        try! FIRAuth.auth()!.signOut()
-        FBSDKAccessToken.setCurrentAccessToken(nil)
-        
-        let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController : UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("LogginView")
-        self.presentViewController(viewController, animated: true, completion: nil)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        CurrentUser.shareInstance.profileData?.name
-        CurrentUser.shareInstance.profileData?.age
-
-        self.collectionView.layer.cornerRadius = self.collectionView.frame.size.width/2
-        self.collectionView.clipsToBounds = true
-        
-        if let user = FIRAuth.auth()?.currentUser {
-            let name = user.displayName
-//            let email = user.email
-            let photoUrl = user.photoURL
-//            let uid = user.uid;
-            
-            self.fbName.text = name
-            if let photoURL = photoUrl {
-                if let data = NSData(contentsOfURL: photoURL) {
-                    self.fbProfilePic.image = UIImage(data: data)
-
-                }
-            }
-            
-                    // Do any additional setup after loading the view.
-
-        } else {
-            // No user is signed in.
-        }
-
-
-        
-        contentLabel.text = ProfileImageList.pic[0].description
-        nameLabel.text = "蒙奇・D・魯夫"
-        
-//        ageLabel.text = CurrentUser.shareInstance.profileData?.nameLabel
-        
-        
-        
-        placeLabel.text = "海上"
-        traitLabel.text = "吃肉、草帽、橡膠、當上海賊王"
-        
-    }
-    var petTest = PetClass()
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden = true
-        ageLabel.text = CurrentUser.shareInstance.profileData?.age
-//        print("HomeView age~~~\(CurrentUser.shareInstance.profileData?.name)")
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
-        
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     
     /*
     // MARK: - Navigation

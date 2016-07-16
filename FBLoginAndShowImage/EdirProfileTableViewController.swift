@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EdirProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EdirProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "")
     
 
@@ -17,7 +17,7 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         photoPicker()
         CurrentUser.shareInstance.profileData = profileData
 //        CurrentUser.shareInstance.profileData?.name = "13"
-        print("EditProfile age~~~\(CurrentUser.shareInstance.profileData?.name)")
+//        print("EditProfile age~~~\(CurrentUser.shareInstance.profileData?.name)")
     }
     @IBAction func headImageAction2(sender: AnyObject) {
         photoPicker()
@@ -28,6 +28,13 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     @IBAction func headImageAction4(sender: AnyObject) {
         photoPicker()
     }
+    
+    @IBOutlet weak var nameTextField: UIButton!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    
+    
     
     @IBAction func genderEdit(sender: AnyObject) {
         editGenderPopUp()
@@ -84,6 +91,13 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     }
     
     
+    
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        let name = CurrentUser.shareInstance.profileData?.name
+//        nameLabel.text = "1234656"
+//        print(nameLabel)
+//        return true
+//    }
     
     
     func photoPicker() {
