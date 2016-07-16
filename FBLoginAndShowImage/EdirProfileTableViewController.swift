@@ -29,10 +29,10 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         photoPicker()
     }
     
-    @IBOutlet weak var nameTextField: UIButton!
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var nameTextField: UITextField!
     
     
     
@@ -98,6 +98,14 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
 //        print(nameLabel)
 //        return true
 //    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
+        
+        return true
+    }
+    
+    
     
     
     func photoPicker() {

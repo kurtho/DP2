@@ -685,20 +685,20 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCe-BN-zjE">
-                                                    <rect key="frame" x="53" y="5" width="259" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <connections>
-                                                        <action selector="nameField:" destination="1jj-fp-Tt3" eventType="editingDidEnd" id="82a-oD-Fao"/>
-                                                    </connections>
-                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0W-lF-nyn">
                                                     <rect key="frame" x="67" y="10" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCe-BN-zjE">
+                                                    <rect key="frame" x="53" y="5" width="259" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="1jj-fp-Tt3" id="z3A-Wh-b1Q"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="eCe-BN-zjE" firstAttribute="leading" secondItem="eWs-VQ-dBu" secondAttribute="trailing" constant="-6" id="EWy-Y7-sIT"/>
@@ -953,7 +953,7 @@
                         <outlet property="genderLabel" destination="9qd-6Z-J7r" id="kV6-cm-7Dr"/>
                         <outlet property="image1" destination="wdO-EP-N1Z" id="H2Y-6w-QUP"/>
                         <outlet property="nameLabel" destination="G0W-lF-nyn" id="mtd-Cs-Zpb"/>
-                        <outlet property="nameTextField" destination="vZG-rC-2JU" id="YhS-nK-GwM"/>
+                        <outlet property="nameTextField" destination="eCe-BN-zjE" id="m4f-HR-YNm"/>
                         <outlet property="placeLabel" destination="2eJ-4f-z4X" id="wM1-6t-TLW"/>
                         <outlet property="relationLabel" destination="wKd-EI-hoQ" id="9Nb-AE-2Le"/>
                     </connections>
