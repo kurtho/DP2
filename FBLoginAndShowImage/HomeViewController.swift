@@ -83,7 +83,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
 
         contentLabel.text = ProfileImageList.pic[0].description
-        nameLabel.text = "蒙奇・D・魯夫"
+//        nameLabel.text = CurrentUser.shareInstance.profileData?.name
         
 //        ageLabel.text = CurrentUser.shareInstance.profileData?.nameLabel
         
@@ -93,15 +93,18 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         traitLabel.text = "吃肉、草帽、橡膠、當上海賊王"
         
     }
-    var petTest = PetClass()
+    
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
+        nameLabel.text = CurrentUser.shareInstance.profileData?.name
         ageLabel.text = CurrentUser.shareInstance.profileData?.age
         placeLabel.text = CurrentUser.shareInstance.profileData?.place
         genderlabel.text = CurrentUser.shareInstance.profileData?.gender
         relationLabel.text = CurrentUser.shareInstance.profileData?.relation
+        traitLabel.text = CurrentUser.shareInstance.profileData?.trait
+        
 //        print("HomeView age~~~\(CurrentUser.shareInstance.profileData?.name)")
     }
     
@@ -126,6 +129,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         return cell
     }
+    
+    
     
     /*
     // MARK: - Navigation

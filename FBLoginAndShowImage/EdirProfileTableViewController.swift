@@ -30,7 +30,6 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     }
     
     
-    @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -61,15 +60,18 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     
     @IBOutlet weak var relationLabel: UILabel!
     
+    @IBOutlet weak var traitTextField: UITextField!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        CurrentUser.shareInstance.profileData?.name
         CurrentUser.shareInstance.profileData?.age
         CurrentUser.shareInstance.profileData?.gender
         CurrentUser.shareInstance.profileData?.place
         CurrentUser.shareInstance.profileData?.relation
+        CurrentUser.shareInstance.profileData?.trait
 
     }
     
@@ -77,10 +79,12 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
+        nameTextField.text = CurrentUser.shareInstance.profileData?.name
         birthLabel.text = CurrentUser.shareInstance.profileData?.age
         genderLabel.text = CurrentUser.shareInstance.profileData?.gender
         placeLabel.text = CurrentUser.shareInstance.profileData?.place
         relationLabel.text = CurrentUser.shareInstance.profileData?.relation
+        traitTextField.text = CurrentUser.shareInstance.profileData?.trait
         
         print("birthLabel.text~~~\(birthLabel.text)")
         print("Curr.share.profi.age~~\(CurrentUser.shareInstance.profileData?.age)")
@@ -91,21 +95,36 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         super.didReceiveMemoryWarning()
     }
     
-    
-    
-//    func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        let name = CurrentUser.shareInstance.profileData?.name
-//        nameLabel.text = "1234656"
-//        print(nameLabel)
-//        return true
-//    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        nameTextField.resignFirstResponder()
-        
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        print("allow editgin~~")
         return true
     }
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        print("textField did beging editing~~")
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        print("textField did end editing")
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
+        traitTextField.resignFirstResponder()
+        CurrentUser.shareInstance.profileData = profileData
+        CurrentUser.shareInstance.profileData?.name = nameTextField.text!
+        CurrentUser.shareInstance.profileData?.trait = traitTextField.text!
+        print("return~~\(textField.text)")
+        return true
+    }
+    
+    
+
+    
+//    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+//        
+//    }
+//    
     
     
     
@@ -176,6 +195,13 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         
     }
     
+    func singleTon() {
+        CurrentUser.shareInstance.profileData?.name
+        CurrentUser.shareInstance.profileData?.age
+        CurrentUser.shareInstance.profileData?.gender
+        CurrentUser.shareInstance.profileData?.place
+        CurrentUser.shareInstance.profileData?.relation
+    }
     
     
     /*

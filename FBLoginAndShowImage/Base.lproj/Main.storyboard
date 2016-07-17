@@ -701,12 +701,6 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0W-lF-nyn">
-                                                    <rect key="frame" x="67" y="10" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCe-BN-zjE">
                                                     <rect key="frame" x="53" y="5" width="259" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -719,9 +713,7 @@
                                             <constraints>
                                                 <constraint firstItem="eCe-BN-zjE" firstAttribute="leading" secondItem="eWs-VQ-dBu" secondAttribute="trailing" constant="-6" id="EWy-Y7-sIT"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="eWs-VQ-dBu" secondAttribute="leading" id="UZ1-0E-q3J"/>
-                                                <constraint firstItem="G0W-lF-nyn" firstAttribute="top" secondItem="eCe-BN-zjE" secondAttribute="bottom" constant="-25" id="asi-5O-o7q"/>
                                                 <constraint firstItem="eWs-VQ-dBu" firstAttribute="centerY" secondItem="Jqa-vS-NVY" secondAttribute="centerY" id="eKc-qe-IhE"/>
-                                                <constraint firstItem="eCe-BN-zjE" firstAttribute="leading" secondItem="G0W-lF-nyn" secondAttribute="trailing" constant="-56" id="wte-IB-vry"/>
                                                 <constraint firstItem="eCe-BN-zjE" firstAttribute="centerY" secondItem="eWs-VQ-dBu" secondAttribute="centerY" id="xS2-tK-3Wf"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="eCe-BN-zjE" secondAttribute="trailing" id="xdZ-EB-Mfz"/>
                                             </constraints>
@@ -918,6 +910,9 @@
                                                     <rect key="frame" x="8" y="34" width="304" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="1jj-fp-Tt3" id="zMV-jI-b1I"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜好/興趣：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZn-sg-Jpa">
                                                     <rect key="frame" x="8" y="8" width="91" height="21"/>
@@ -978,10 +973,10 @@
                         <outlet property="birthLabel" destination="tEe-zc-dEJ" id="xqZ-7A-a8j"/>
                         <outlet property="genderLabel" destination="9qd-6Z-J7r" id="kV6-cm-7Dr"/>
                         <outlet property="image1" destination="wdO-EP-N1Z" id="H2Y-6w-QUP"/>
-                        <outlet property="nameLabel" destination="G0W-lF-nyn" id="mtd-Cs-Zpb"/>
                         <outlet property="nameTextField" destination="eCe-BN-zjE" id="m4f-HR-YNm"/>
                         <outlet property="placeLabel" destination="2eJ-4f-z4X" id="wM1-6t-TLW"/>
                         <outlet property="relationLabel" destination="wKd-EI-hoQ" id="9Nb-AE-2Le"/>
+                        <outlet property="traitTextField" destination="wOz-R6-ROG" id="UyD-RV-DJA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NRw-jo-05C" userLabel="First Responder" sceneMemberID="firstResponder"/>
