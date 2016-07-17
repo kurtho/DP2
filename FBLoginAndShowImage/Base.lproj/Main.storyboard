@@ -34,6 +34,9 @@
                                             <state key="normal" title="Login">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="LoginActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="01B-if-63d"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyL-zd-wW5">
                                             <rect key="frame" x="102" y="445" width="124" height="34"/>
@@ -41,6 +44,9 @@
                                             <state key="normal" title="Create account">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="createAccountButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wky-lT-8DL"/>
+                                            </connections>
                                         </button>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPm-tq-OPN">
                                             <rect key="frame" x="59" y="340" width="210" height="30"/>
@@ -129,7 +135,7 @@
             </objects>
             <point key="canvasLocation" x="-33" y="902.99999999999989"/>
         </scene>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="xXm-Os-nR6">
             <objects>
                 <viewController id="Y3W-2Z-lYO" sceneMemberID="viewController">
@@ -142,7 +148,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="zkR-ax-z0T"/>
+                    <tabBarItem key="tabBarItem" badgeValue="Mission" systemItem="featured" id="zkR-ax-z0T"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8y-AS-1Wq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -235,7 +241,7 @@
                             <constraint firstItem="4EA-zI-esS" firstAttribute="leading" secondItem="DPC-BO-Xy3" secondAttribute="leadingMargin" constant="-20" id="pX1-RV-Ay7"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="JYx-ki-Op2"/>
+                    <tabBarItem key="tabBarItem" badgeValue="Search" systemItem="search" id="JYx-ki-Op2"/>
                     <connections>
                         <outlet property="collectionView" destination="4EA-zI-esS" id="gxk-0i-OgW"/>
                         <outlet property="collectionViewLayout" destination="iek-fg-n13" id="n1A-hi-wH6"/>
@@ -570,12 +576,13 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADk-2f-mJJ">
                                                     <rect key="frame" x="8" y="8" width="70" height="70"/>
-                                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.81123798079999998" green="0.81123798079999998" blue="0.81123798079999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="Vbw-gi-e4G"/>
                                                         <constraint firstAttribute="height" constant="70" id="lEf-mF-zl5"/>
                                                     </constraints>
-                                                    <state key="normal">
+                                                    <state key="normal" title="圖片">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
@@ -591,11 +598,14 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWx-lV-VJ6">
                                                     <rect key="frame" x="86" y="8" width="70" height="70"/>
-                                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.81123798079999998" green="0.81123798079999998" blue="0.81123798079999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="P6k-Ae-yRl"/>
                                                         <constraint firstAttribute="height" constant="70" id="Uz6-Ri-LCN"/>
                                                     </constraints>
+                                                    <state key="normal" title="圖片">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="headImageAction2:" destination="1jj-fp-Tt3" eventType="touchUpInside" id="Hvl-BF-wtK"/>
                                                     </connections>
@@ -609,11 +619,14 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xer-nU-C2H">
                                                     <rect key="frame" x="164" y="8" width="70" height="70"/>
-                                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.81123798079999998" green="0.81123798079999998" blue="0.81123798079999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="28Q-Kr-qoJ"/>
                                                         <constraint firstAttribute="height" constant="70" id="VfA-Nq-ju9"/>
                                                     </constraints>
+                                                    <state key="normal" title="圖片">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="headImageAction3:" destination="1jj-fp-Tt3" eventType="touchUpInside" id="o4b-Fd-iSV"/>
                                                     </connections>
@@ -627,11 +640,14 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWL-OF-xNj">
                                                     <rect key="frame" x="242" y="8" width="70" height="70"/>
-                                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.81123798079999998" green="0.81123798079999998" blue="0.81123798079999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="70" id="JgE-70-kYs"/>
                                                         <constraint firstAttribute="width" constant="70" id="Xzs-db-Cqt"/>
                                                     </constraints>
+                                                    <state key="normal" title="圖片">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="headImageAction4:" destination="1jj-fp-Tt3" eventType="touchUpInside" id="5Fv-zV-y0V"/>
                                                     </connections>
@@ -776,6 +792,9 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZG-rC-2JU">
                                                     <rect key="frame" x="52" y="5" width="260" height="30"/>
+                                                    <connections>
+                                                        <action selector="birthEdit:" destination="1jj-fp-Tt3" eventType="touchUpInside" id="lpO-f0-tNP"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEe-zc-dEJ">
                                                     <rect key="frame" x="67" y="9" width="42" height="21"/>
@@ -895,7 +914,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wOz-R6-ROG">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wOz-R6-ROG">
                                                     <rect key="frame" x="8" y="34" width="304" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -909,7 +928,10 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="topMargin" secondItem="BZn-sg-Jpa" secondAttribute="top" id="DPf-dT-PO0"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="wOz-R6-ROG" secondAttribute="leading" id="IlH-uq-g8O"/>
+                                                <constraint firstItem="wOz-R6-ROG" firstAttribute="top" secondItem="BZn-sg-Jpa" secondAttribute="bottom" constant="5" id="TJn-F4-FG5"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="BZn-sg-Jpa" secondAttribute="leading" id="t1X-nf-xiN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wOz-R6-ROG" secondAttribute="trailing" id="tSi-ER-MD9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -926,15 +948,19 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="簡單介紹自己" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EgY-No-2N0">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="簡單介紹自己" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EgY-No-2N0">
                                                     <rect key="frame" x="8" y="36" width="304" height="163.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="EgY-No-2N0" firstAttribute="top" secondItem="cg3-9n-qQT" secondAttribute="bottom" constant="5" id="7u1-Sg-JGh"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="cg3-9n-qQT" secondAttribute="leading" id="Tjo-84-TsJ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EgY-No-2N0" secondAttribute="bottom" constant="-7.5" id="hjx-og-k6H"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="EgY-No-2N0" secondAttribute="leading" id="q4b-Gf-qcV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="EgY-No-2N0" secondAttribute="trailing" id="rHG-TE-Lil"/>
                                                 <constraint firstItem="cg3-9n-qQT" firstAttribute="top" secondItem="8De-2h-jnc" secondAttribute="topMargin" constant="2" id="vP3-Oh-zcE"/>
                                             </constraints>
                                         </tableViewCellContentView>

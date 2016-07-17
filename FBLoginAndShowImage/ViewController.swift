@@ -13,6 +13,7 @@ import SDWebImage
 import Alamofire
 import SwiftyJSON
 import FirebaseAuth
+import Firebase
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
@@ -27,6 +28,32 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var forgotPassword: UIButton!
 
     
+    @IBAction func LoginActionButton(sender: AnyObject) {
+        login()
+    }
+
+
+    
+    @IBAction func createAccountButton(sender: AnyObject) {
+        FIRAuth.auth()?.createUserWithEmail(accountField.text!, password: passwordField.text!, completion: {
+            user, error in
+            if error != nil {
+                self.accountRepeatly()
+
+//                self.login()
+                print("123124")
+//                                means accout has been created
+            }else {
+                
+                print("user created")
+                self.login()
+            }
+            
+        })
+        
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +66,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let homeViewController : UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("HomeView")
                 self.presentViewController(homeViewController, animated: true, completion: nil)
-                
-                
-                
                 
                 // User is signed in.
             }else {
@@ -73,38 +97,38 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    func login() {
+        FIRAuth.auth()?.signInWithEmail(accountField.text!, password: passwordField.text!, completion: {
+            user, error in
+            if error != nil {
+                self.alertWrongPassWordOrAccount()
+                //                password or email is incorrect
+                print("incorrect")
+            } else {
+                print("user login success")
+            }
+            
+        })
+    }
+    
+    
 
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         print("User login in")
         loadSpinning.startAnimating()
+            hideButtons()
 
-        self.logginButton.hidden = true
-        self.accountField.hidden = true
-        self.passwordField.hidden = true
-        self.accountLoginButton.hidden = true
-        self.createAccountButton.hidden = true
-        self.forgotPassword.hidden = true
         
-        
-        
+
         if error != nil {
-            self.logginButton.hidden = false
-            
-            self.forgotPassword.hidden = false
-            self.accountField.hidden = false
-            self.passwordField.hidden = false
-            self.accountLoginButton.hidden = false
-            self.createAccountButton.hidden = false
+            unhiddenButtons()
             loadSpinning.stopAnimating()
             
         }else if (result.isCancelled) {
-            self.logginButton.hidden = false
-            
-            self.forgotPassword.hidden = false
-            self.accountField.hidden = false
-            self.passwordField.hidden = false
-            self.accountLoginButton.hidden = false
-            self.createAccountButton.hidden = false
+            unhiddenButtons()
             loadSpinning.stopAnimating()
             
         }else {
@@ -121,5 +145,38 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         print("User did log out")
     }
+    
+    func hideButtons() {
+        self.logginButton.hidden = true
+        self.accountField.hidden = true
+        self.passwordField.hidden = true
+        self.accountLoginButton.hidden = true
+        self.createAccountButton.hidden = true
+        self.forgotPassword.hidden = true
+    }
+    
+    func unhiddenButtons() {
+        self.logginButton.hidden = false
+        self.forgotPassword.hidden = false
+        self.accountField.hidden = false
+        self.passwordField.hidden = false
+        self.accountLoginButton.hidden = false
+        self.createAccountButton.hidden = false
+    }
+    
+    func alertWrongPassWordOrAccount() {
+        let alertButton = UIAlertController(title: "帳號或密碼錯誤", message: nil, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "知道了", style: .Cancel, handler: nil)
+        alertButton.addAction(okAction)
+        self.presentViewController(alertButton, animated: true, completion: nil)
+    }
+    
+    func accountRepeatly() {
+        let alertButton = UIAlertController(title: "此帳號已有人使用", message: nil, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "知道了", style: .Cancel, handler: nil)
+        alertButton.addAction(okAction)
+        self.presentViewController(alertButton, animated: true, completion: nil)
+    }
+    
 }
 

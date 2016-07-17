@@ -45,6 +45,7 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     @IBAction func birthEdit(sender: AnyObject) {
         showPopUp()
     }
+    
     @IBOutlet weak var birthLabel: UILabel!
     
     
