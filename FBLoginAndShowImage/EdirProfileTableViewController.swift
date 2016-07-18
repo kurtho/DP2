@@ -38,10 +38,12 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     }
     
     
-    
     @IBOutlet weak var nameTextField: UITextField!
-    
     @IBOutlet weak var genderTextField: UITextField!
+    @IBOutlet weak var birthTextField: UITextField!
+    @IBOutlet weak var placeTextField: UITextField!
+    @IBOutlet weak var relationTextField: UILabel!
+
     
     
     @IBAction func genderEdit(sender: AnyObject) {
@@ -52,20 +54,14 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         showPopUp()
     }
     
-    @IBOutlet weak var birthLabel: UILabel!
-    
-    
     @IBAction func placeEdit(sender: AnyObject) {
         editPlacePopIp()
     }
     
-    @IBOutlet weak var placeLabel: UILabel!
     
     @IBAction func relationEdit(sender: AnyObject) {
         editRelationPopIp()
     }
-    
-    @IBOutlet weak var relationLabel: UILabel!
     
     @IBOutlet weak var traitTextField: UITextField!
     
@@ -74,7 +70,7 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        singleTon()
+//        singleTon()
         
     }
     
@@ -82,13 +78,13 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
         nameTextField.text = CurrentUser.shareInstance.profileData?.name
-        birthLabel.text = CurrentUser.shareInstance.profileData?.age
+        birthTextField.text = CurrentUser.shareInstance.profileData?.age
         genderTextField.text = CurrentUser.shareInstance.profileData?.gender
-        placeLabel.text = CurrentUser.shareInstance.profileData?.place
-        relationLabel.text = CurrentUser.shareInstance.profileData?.relation
+        placeTextField.text = CurrentUser.shareInstance.profileData?.place
+        relationTextField.text = CurrentUser.shareInstance.profileData?.relation
         traitTextField.text = CurrentUser.shareInstance.profileData?.trait
         
-        print("birthLabel.text~~~\(birthLabel.text)")
+//        print("birthLabel.text~~~\(birthLabel.text)")
         print("Curr.share.profi.age~~\(CurrentUser.shareInstance.profileData?.age)")
         loadViewIfNeeded()
     }

@@ -8,7 +8,13 @@
 
 import UIKit
 
+@objc protocol BirthDataDelegate: class {
+    
+}
+
 class PopUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    var delegate: BirthDataDelegate?
+    
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var showPicker: UILabel!
     

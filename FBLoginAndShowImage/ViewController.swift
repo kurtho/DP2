@@ -9,13 +9,13 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
-import SDWebImage
-import Alamofire
+
+
 import SwiftyJSON
 import FirebaseAuth
 import Firebase
 
-class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDelegate {
     
     var logginButton: FBSDKLoginButton = FBSDKLoginButton()
 
@@ -26,6 +26,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var accountLoginButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var forgotPassword: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     
     @IBAction func LoginActionButton(sender: AnyObject) {
@@ -72,14 +73,15 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 // No user is signed in.
                 
                 
-                self.logginButton.center = self.fbView.center
-                self.view.addSubview(self.logginButton)
-            
-                self.logginButton.readPermissions = ["public_profile","email","user_friends"]
-                self.logginButton.delegate = self
-                self.logginButton.hidden = false
-                    self.reloadInputViews()
+
             }
+            self.logginButton.center = self.fbView.center
+            self.view.addSubview(self.logginButton)
+            
+            self.logginButton.readPermissions = ["public_profile","email","user_friends"]
+            self.logginButton.delegate = self
+            self.logginButton.hidden = false
+            self.reloadInputViews()
         }
         
         
@@ -179,6 +181,21 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
 
+    // MARK: - textField
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        scrollView.setContentOffset(CGPointMake(0, 250),animated: true)
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
+    }
+    //輸入帳密的地方沒有彈起
     
 }
 

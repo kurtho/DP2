@@ -40,6 +40,8 @@ class CurrentUser {
 class profileList {
     static let shareInstance = profileList()
     var basicInfo = [ProfileData]()
+    
+    
 }
 
 

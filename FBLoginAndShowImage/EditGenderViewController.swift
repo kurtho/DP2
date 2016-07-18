@@ -12,6 +12,7 @@ class EditGenderViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var showPicker: UILabel!
     
+    
     @IBAction func invisibleButton(sender: AnyObject) {
         removeAnimate()
         CurrentUser.shareInstance.profileData = profileData
@@ -91,9 +92,7 @@ class EditGenderViewController: UIViewController, UIPickerViewDelegate, UIPicker
     func updateLabel() {
         let oneComponent = PickerComponent.gen.rawValue
 
-        
         let one = pickerData[oneComponent][pickerView.selectedRowInComponent(oneComponent)]
-
         
         showPicker.text = "性別: " + one
         gender = one
@@ -122,7 +121,7 @@ class EditGenderViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     
     
-    // MARK: - Navigation
+    // MARK: - ®Navigation
     
     
 }
