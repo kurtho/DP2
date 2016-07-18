@@ -31,6 +31,7 @@ class EditGenderViewController: UIViewController, UIPickerViewDelegate, UIPicker
         self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.6)
         //        self.navigationController?.navigationBarHidden = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,10 +41,17 @@ class EditGenderViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        birthLabel.text = CurrentUser.shareInstance.profileData?.age
+        birthLabel.text = CurrentUser.shareInstance.profileData?.gender
+//        editGenderPopUp()
         
     }
     
+    
+//    func editGenderPopUp() {
+//        let editProfileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("EditProfile") as! EdirProfileTableViewController
+//        editProfileVC.genderTextField.text = CurrentUser.shareInstance.profileData?.gender
+//    }
+    // MARK: - showAnimation
     
     func showAnimation() {
         self.view.transform = CGAffineTransformMakeScale(1.3, 1.3)

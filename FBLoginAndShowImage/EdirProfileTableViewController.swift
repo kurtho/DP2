@@ -13,9 +13,14 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     
 
     @IBOutlet weak var image1: UIImageView!
+    @IBOutlet weak var image2: UIImageView!
+    @IBOutlet weak var image3: UIImageView!
+    @IBOutlet weak var image4: UIImageView!
+    
     @IBAction func headImageAction1(sender: AnyObject) {
         photoPicker()
-        CurrentUser.shareInstance.profileData = profileData
+        print("image1~~\(image1.image)")
+//        CurrentUser.shareInstance.profileData = profileData
 //        CurrentUser.shareInstance.profileData?.name = "13"
 //        print("EditProfile age~~~\(CurrentUser.shareInstance.profileData?.name)")
     }
@@ -23,23 +28,22 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         photoPicker()
     }
     @IBAction func headImageAction3(sender: AnyObject) {
-        photoPicker()
+        
     }
     @IBAction func headImageAction4(sender: AnyObject) {
-        photoPicker()
+        
     }
     
     
     
     @IBOutlet weak var nameTextField: UITextField!
     
+    @IBOutlet weak var genderTextField: UITextField!
     
     
     @IBAction func genderEdit(sender: AnyObject) {
         editGenderPopUp()
-    }
-    @IBOutlet weak var genderLabel: UILabel!
-    
+    }    
     
     @IBAction func birthEdit(sender: AnyObject) {
         showPopUp()
@@ -66,22 +70,17 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        CurrentUser.shareInstance.profileData?.name
-        CurrentUser.shareInstance.profileData?.age
-        CurrentUser.shareInstance.profileData?.gender
-        CurrentUser.shareInstance.profileData?.place
-        CurrentUser.shareInstance.profileData?.relation
-        CurrentUser.shareInstance.profileData?.trait
-
+        self.hideKeyboardWhenTappedAround()
+        singleTon()
+        
     }
-    
     
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
         nameTextField.text = CurrentUser.shareInstance.profileData?.name
         birthLabel.text = CurrentUser.shareInstance.profileData?.age
-        genderLabel.text = CurrentUser.shareInstance.profileData?.gender
+        genderTextField.text = CurrentUser.shareInstance.profileData?.gender
         placeLabel.text = CurrentUser.shareInstance.profileData?.place
         relationLabel.text = CurrentUser.shareInstance.profileData?.relation
         traitTextField.text = CurrentUser.shareInstance.profileData?.trait
@@ -95,24 +94,14 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         super.didReceiveMemoryWarning()
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        print("allow editgin~~")
-        return true
-    }
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        print("textField did beging editing~~")
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        print("textField did end editing")
-    }
+
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        nameTextField.resignFirstResponder()
-        traitTextField.resignFirstResponder()
+        textField.resignFirstResponder()
         CurrentUser.shareInstance.profileData = profileData
+        
         CurrentUser.shareInstance.profileData?.name = nameTextField.text!
+        CurrentUser.shareInstance.profileData?.gender = genderTextField.text!
         CurrentUser.shareInstance.profileData?.trait = traitTextField.text!
         print("return~~\(textField.text)")
         return true
@@ -126,6 +115,8 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
 //    }
 //    
     
+    // MARK: - photoPicker set up
+
     
     
     func photoPicker() {
@@ -139,8 +130,8 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
          image1.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
 
+    
 
     // MARK: - Table view data source
 
@@ -195,12 +186,16 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         
     }
     
+    
+    
+    
     func singleTon() {
         CurrentUser.shareInstance.profileData?.name
         CurrentUser.shareInstance.profileData?.age
         CurrentUser.shareInstance.profileData?.gender
         CurrentUser.shareInstance.profileData?.place
         CurrentUser.shareInstance.profileData?.relation
+        CurrentUser.shareInstance.profileData?.trait
     }
     
     
@@ -259,4 +254,15 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     }
     */
 
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

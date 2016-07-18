@@ -26,12 +26,18 @@ class ProfileData: NSObject {
         self.trait = trait
         self.content = content
         }
+    
 }
+
+
+
 
 class CurrentUser {
     static let shareInstance = CurrentUser()
     var profileData: ProfileData?
+    
 }
+
 
 class profileList {
     static let shareInstance = profileList()

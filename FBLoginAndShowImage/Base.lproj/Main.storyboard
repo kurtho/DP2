@@ -736,13 +736,10 @@
                                                     <rect key="frame" x="53" y="5" width="259" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="1jj-fp-Tt3" id="8lL-7D-Fqk"/>
+                                                    </connections>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-6Z-J7r">
-                                                    <rect key="frame" x="67" y="9" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FsX-D9-myW">
                                                     <rect key="frame" x="53" y="5" width="259" height="30"/>
                                                     <connections>
@@ -753,12 +750,10 @@
                                             <constraints>
                                                 <constraint firstAttribute="leadingMargin" secondItem="Bnv-iM-kFe" secondAttribute="leading" id="7hc-GM-fa8"/>
                                                 <constraint firstItem="kdI-wV-YZ3" firstAttribute="leading" secondItem="Bnv-iM-kFe" secondAttribute="trailing" constant="-6" id="ARz-yJ-9rX"/>
-                                                <constraint firstItem="9qd-6Z-J7r" firstAttribute="centerY" secondItem="kdI-wV-YZ3" secondAttribute="centerY" id="Baj-Hc-CcF"/>
                                                 <constraint firstItem="FsX-D9-myW" firstAttribute="leading" secondItem="Bnv-iM-kFe" secondAttribute="trailing" constant="-6" id="CTP-xt-rRK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="kdI-wV-YZ3" secondAttribute="trailing" id="CVp-Tq-NVt"/>
                                                 <constraint firstItem="kdI-wV-YZ3" firstAttribute="centerY" secondItem="Bnv-iM-kFe" secondAttribute="centerY" id="J2I-p2-dw8"/>
                                                 <constraint firstItem="FsX-D9-myW" firstAttribute="centerY" secondItem="AXF-kx-W4Q" secondAttribute="centerY" id="Jq5-xy-sqY"/>
-                                                <constraint firstItem="kdI-wV-YZ3" firstAttribute="leading" secondItem="9qd-6Z-J7r" secondAttribute="trailing" constant="-56" id="nia-aY-0sb"/>
                                                 <constraint firstItem="Bnv-iM-kFe" firstAttribute="centerY" secondItem="AXF-kx-W4Q" secondAttribute="centerY" id="x2d-By-OCN"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="FsX-D9-myW" secondAttribute="trailing" id="ym8-rt-BYq"/>
                                             </constraints>
@@ -971,8 +966,11 @@
                     <navigationItem key="navigationItem" id="tFZ-cA-TAS"/>
                     <connections>
                         <outlet property="birthLabel" destination="tEe-zc-dEJ" id="xqZ-7A-a8j"/>
-                        <outlet property="genderLabel" destination="9qd-6Z-J7r" id="kV6-cm-7Dr"/>
+                        <outlet property="genderTextField" destination="kdI-wV-YZ3" id="5H5-33-rWS"/>
                         <outlet property="image1" destination="wdO-EP-N1Z" id="H2Y-6w-QUP"/>
+                        <outlet property="image2" destination="O4y-24-Yrk" id="852-45-SvW"/>
+                        <outlet property="image3" destination="ZO3-rA-i9F" id="ALk-br-jkF"/>
+                        <outlet property="image4" destination="hsu-Eu-mb1" id="avD-mq-h4a"/>
                         <outlet property="nameTextField" destination="eCe-BN-zjE" id="m4f-HR-YNm"/>
                         <outlet property="placeLabel" destination="2eJ-4f-z4X" id="wM1-6t-TLW"/>
                         <outlet property="relationLabel" destination="wKd-EI-hoQ" id="9Nb-AE-2Le"/>
@@ -995,12 +993,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-ex-Gtf">
-                                <rect key="frame" x="-4" y="0.0" width="328" height="400"/>
-                                <connections>
-                                    <action selector="invisibleButton:" destination="eAn-kj-raD" eventType="touchUpInside" id="wSY-NA-DwS"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5O-mq-eng">
                                 <rect key="frame" x="0.0" y="324" width="320" height="244"/>
                                 <subviews>
@@ -1029,6 +1021,12 @@
                                     <constraint firstAttribute="bottom" secondItem="bU6-nP-Nje" secondAttribute="bottom" constant="60" id="yim-HS-gwU"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-ex-Gtf">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="400"/>
+                                <connections>
+                                    <action selector="invisibleButton:" destination="eAn-kj-raD" eventType="touchUpInside" id="wSY-NA-DwS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
