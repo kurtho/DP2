@@ -589,7 +589,7 @@
                                                         <action selector="headImageAction1:" destination="1jj-fp-Tt3" eventType="touchUpInside" id="f6E-Cd-9V8"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wdO-EP-N1Z">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="1" translatesAutoresizingMaskIntoConstraints="NO" id="wdO-EP-N1Z">
                                                     <rect key="frame" x="8" y="8" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="j4B-GS-7Pt"/>

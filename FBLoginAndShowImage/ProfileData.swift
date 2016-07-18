@@ -30,8 +30,6 @@ class ProfileData: NSObject {
 }
 
 
-
-
 class CurrentUser {
     static let shareInstance = CurrentUser()
     var profileData: ProfileData?

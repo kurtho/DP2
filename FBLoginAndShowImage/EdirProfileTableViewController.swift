@@ -17,21 +17,24 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     @IBOutlet weak var image3: UIImageView!
     @IBOutlet weak var image4: UIImageView!
     
+    var tempImage = UIImage()
+    var tempImageNumber = 0
+    
     @IBAction func headImageAction1(sender: AnyObject) {
+        tempImageNumber = 1
         photoPicker()
-        print("image1~~\(image1.image)")
-//        CurrentUser.shareInstance.profileData = profileData
-//        CurrentUser.shareInstance.profileData?.name = "13"
-//        print("EditProfile age~~~\(CurrentUser.shareInstance.profileData?.name)")
     }
     @IBAction func headImageAction2(sender: AnyObject) {
+        tempImageNumber = 2
         photoPicker()
     }
     @IBAction func headImageAction3(sender: AnyObject) {
-        
+        tempImageNumber = 3
+        photoPicker()
     }
     @IBAction func headImageAction4(sender: AnyObject) {
-        
+        tempImageNumber = 4
+        photoPicker()
     }
     
     
@@ -127,8 +130,25 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     }
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-         image1.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+         tempImage = (info[UIImagePickerControllerOriginalImage] as? UIImage)!
+        showImage()
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func showImage() {
+        switch tempImageNumber {
+        case 1:
+            image1.image = tempImage
+        case 2:
+            image2.image = tempImage
+        case 3:
+            image3.image = tempImage
+        case 4:
+            image4.image = tempImage
+        default:
+            break
+        }
+        print(tempImageNumber)
     }
 
     
