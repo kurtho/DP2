@@ -139,7 +139,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
         FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
             // ...
             print("User login in Firebase app")
-
+            
             }
         }
     }

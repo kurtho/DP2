@@ -10,7 +10,7 @@ import UIKit
 
 class EdirProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
-    
+
 
     @IBOutlet weak var image1: UIImageView!
     @IBOutlet weak var image2: UIImageView!
@@ -71,7 +71,6 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         singleTon()
-        
     }
     
     
@@ -80,7 +79,7 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         singleTon()
         
 //        print("birthLabel.text~~~\(birthLabel.text)")
-        loadViewIfNeeded()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -95,7 +94,8 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         CurrentUser.shareInstance.profileData?.name = nameTextField.text!
         CurrentUser.shareInstance.profileData?.gender = genderTextField.text!
         CurrentUser.shareInstance.profileData?.trait = traitTextField.text!
-        print("return~~\(textField.text)")
+        print("textField return~~\(textField.text)")
+        print("singleTon~~~name\(CurrentUser.shareInstance.profileData?.name)")
         return true
     }
     

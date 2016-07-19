@@ -31,11 +31,11 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
 
         layout.itemSize = CGSizeMake(CGFloat(width), CGFloat(width) )
         
-        let urlString: String = "http://1575d346.ngrok.io/api/v1/missions"
-        Alamofire.request(.GET, urlString)
+        let urlString: String = "http://6e812457.ngrok.io/api/v1/login"
+        Alamofire.request(.POST, urlString)
             .responseJSON {
                 response in
-//                                print("Response data: \(response.result.value)")
+                                print("Response data: \(response.result.value)")
                 
                 if let data = response.result.value {
                     let json = JSON(data)
