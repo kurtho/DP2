@@ -42,7 +42,8 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var birthTextField: UITextField!
     @IBOutlet weak var placeTextField: UITextField!
-    @IBOutlet weak var relationTextField: UILabel!
+    @IBOutlet weak var relationTextField: UITextField!
+    
 
     
     

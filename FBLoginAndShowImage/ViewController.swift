@@ -138,11 +138,14 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
         let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
         FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
             // ...
+            
+
             print("User login in Firebase app")
             
             }
         }
     }
+
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         print("User did log out")

@@ -15,7 +15,7 @@ class EditGenderViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     @IBAction func invisibleButton(sender: AnyObject) {
         removeAnimate()
-        CurrentUser.shareInstance.profileData = profileData
+//        CurrentUser.shareInstance.profileData = profileData
         CurrentUser.shareInstance.profileData?.gender = gender
         
         print("profileData.gender~~\(CurrentUser.shareInstance.profileData?.gender)")
@@ -23,7 +23,7 @@ class EditGenderViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var birthLabel: UILabel!
     
     var gender = ""
-    var profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [""])
+//    var profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [""])
     
     
     override func viewDidLoad() {

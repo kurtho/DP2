@@ -980,7 +980,7 @@
                         <outlet property="image4" destination="hsu-Eu-mb1" id="avD-mq-h4a"/>
                         <outlet property="nameTextField" destination="eCe-BN-zjE" id="m4f-HR-YNm"/>
                         <outlet property="placeTextField" destination="c0E-G3-lS2" id="QV6-lY-pIU"/>
-                        <outlet property="relationTextField" destination="B99-zp-hMy" id="gDd-RQ-CND"/>
+                        <outlet property="relationTextField" destination="hEe-ve-QLe" id="Y4Z-6C-BGe"/>
                         <outlet property="traitTextField" destination="wOz-R6-ROG" id="UyD-RV-DJA"/>
                     </connections>
                 </tableViewController>

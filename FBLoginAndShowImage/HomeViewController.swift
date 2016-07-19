@@ -37,11 +37,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //        print("ProfileImageList.pic  ~\(ProfileImageList.pic[2].name)")
     }
 
-    
-    
-
-    
-    
     @IBAction func didTapLogOut(sender: AnyObject) {
         
         
@@ -53,6 +48,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.presentViewController(viewController, animated: true, completion: nil)
     }
 
+    
+        let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [""])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,17 +88,21 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         traitLabel.text = "吃肉、草帽、橡膠、當上海賊王"
         
     }
-    
+
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
+        CurrentUser.shareInstance.profileData = profileData
+        
         nameLabel.text = CurrentUser.shareInstance.profileData?.name
         ageLabel.text = CurrentUser.shareInstance.profileData?.age
         placeLabel.text = CurrentUser.shareInstance.profileData?.place
         genderlabel.text = CurrentUser.shareInstance.profileData?.gender
         relationLabel.text = CurrentUser.shareInstance.profileData?.relation
         traitLabel.text = CurrentUser.shareInstance.profileData?.trait
+        
+        
         
 //        print("HomeView age~~~\(CurrentUser.shareInstance.profileData?.name)")
     }
