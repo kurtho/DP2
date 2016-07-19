@@ -9,7 +9,7 @@
 import UIKit
 
 class EdirProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [])
+
     
 
     @IBOutlet weak var image1: UIImageView!
@@ -70,22 +70,16 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-//        singleTon()
+        singleTon()
         
     }
     
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
-        nameTextField.text = CurrentUser.shareInstance.profileData?.name
-        birthTextField.text = CurrentUser.shareInstance.profileData?.age
-        genderTextField.text = CurrentUser.shareInstance.profileData?.gender
-        placeTextField.text = CurrentUser.shareInstance.profileData?.place
-        relationTextField.text = CurrentUser.shareInstance.profileData?.relation
-        traitTextField.text = CurrentUser.shareInstance.profileData?.trait
+        singleTon()
         
 //        print("birthLabel.text~~~\(birthLabel.text)")
-        print("Curr.share.profi.age~~\(CurrentUser.shareInstance.profileData?.age)")
         loadViewIfNeeded()
     }
     
@@ -97,7 +91,6 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        CurrentUser.shareInstance.profileData = profileData
         
         CurrentUser.shareInstance.profileData?.name = nameTextField.text!
         CurrentUser.shareInstance.profileData?.gender = genderTextField.text!
@@ -206,12 +199,12 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     
     
     func singleTon() {
-        CurrentUser.shareInstance.profileData?.name
-        CurrentUser.shareInstance.profileData?.age
-        CurrentUser.shareInstance.profileData?.gender
-        CurrentUser.shareInstance.profileData?.place
-        CurrentUser.shareInstance.profileData?.relation
-        CurrentUser.shareInstance.profileData?.trait
+        nameTextField.text = CurrentUser.shareInstance.profileData?.name
+        birthTextField.text = CurrentUser.shareInstance.profileData?.age
+        genderTextField.text = CurrentUser.shareInstance.profileData?.gender
+        placeTextField.text = CurrentUser.shareInstance.profileData?.place
+        relationTextField.text = CurrentUser.shareInstance.profileData?.relation
+        traitTextField.text = CurrentUser.shareInstance.profileData?.trait
     }
     
     

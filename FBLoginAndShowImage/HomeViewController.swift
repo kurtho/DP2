@@ -56,11 +56,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CurrentUser.shareInstance.profileData?.name
-        CurrentUser.shareInstance.profileData?.age
-        CurrentUser.shareInstance.profileData?.place
-        CurrentUser.shareInstance.profileData?.relation
-        CurrentUser.shareInstance.profileData?.gender
         self.collectionView.layer.cornerRadius = self.collectionView.frame.size.width/2
         self.collectionView.clipsToBounds = true
         

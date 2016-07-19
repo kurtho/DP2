@@ -14,7 +14,7 @@ class EditRelationViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     @IBAction func invisibleButton(sender: AnyObject) {
         removeAnimate()
-        CurrentUser.shareInstance.profileData = profileData
+        
         CurrentUser.shareInstance.profileData?.relation = relation
         
         //        print("profileData.age~~\(CurrentUser.shareInstance.profileData?.gender)")
@@ -22,7 +22,7 @@ class EditRelationViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var birthLabel: UILabel!
     
     var relation = ""
-    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [])
+    
     
     
     override func viewDidLoad() {

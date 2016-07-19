@@ -20,7 +20,7 @@ class PopUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @IBAction func invisibleButton(sender: AnyObject) {
         removeAnimate()
-        CurrentUser.shareInstance.profileData = profileData
+        
         CurrentUser.shareInstance.profileData?.age = myBirth
 
         print("profileData.age~~\(CurrentUser.shareInstance.profileData?.age)")
@@ -28,7 +28,7 @@ class PopUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var birthLabel: UILabel!
 
     var myBirth = ""
-    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [])
+    
     
     
     override func viewDidLoad() {

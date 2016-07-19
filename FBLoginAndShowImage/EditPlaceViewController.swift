@@ -14,7 +14,7 @@ class EditPlaceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     @IBAction func invisibleButton(sender: AnyObject) {
         removeAnimate()
-        CurrentUser.shareInstance.profileData = profileData
+        
         CurrentUser.shareInstance.profileData?.place = place
         
 //        print("profileData.age~~\(CurrentUser.shareInstance.profileData?.gender)")
@@ -22,7 +22,6 @@ class EditPlaceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var birthLabel: UILabel!
     
     var place = ""
-    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [])
     
     
     override func viewDidLoad() {
