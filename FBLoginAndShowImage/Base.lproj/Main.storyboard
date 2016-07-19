@@ -25,12 +25,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="328" height="568"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBQ-wn-aVr">
-                                            <rect key="frame" x="0.0" y="0.0" width="328" height="568"/>
-                                        </scrollView>
                                         <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backGround1" translatesAutoresizingMaskIntoConstraints="NO" id="10o-0A-TRV">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="568"/>
                                         </imageView>
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBQ-wn-aVr">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="568"/>
+                                        </scrollView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r8-hm-rVP">
                                             <rect key="frame" x="141" y="416" width="45" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>

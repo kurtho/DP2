@@ -43,6 +43,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     @IBAction func didTapLogOut(sender: AnyObject) {
+        
+        
         try! FIRAuth.auth()!.signOut()
         FBSDKAccessToken.setCurrentAccessToken(nil)
         

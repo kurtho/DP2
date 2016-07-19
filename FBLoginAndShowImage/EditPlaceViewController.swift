@@ -22,7 +22,7 @@ class EditPlaceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var birthLabel: UILabel!
     
     var place = ""
-    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "")
+    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [])
     
     
     override func viewDidLoad() {

@@ -9,7 +9,7 @@
 import UIKit
 
 class EdirProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "")
+    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [])
     
 
     @IBOutlet weak var image1: UIImageView!
@@ -93,7 +93,7 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         super.didReceiveMemoryWarning()
     }
     
-
+//  MARK: - textField
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -277,7 +277,6 @@ extension UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
-    
     func dismissKeyboard() {
         view.endEditing(true)
     }

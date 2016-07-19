@@ -28,7 +28,7 @@ class PopUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var birthLabel: UILabel!
 
     var myBirth = ""
-    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "")
+    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [])
     
     
     override func viewDidLoad() {

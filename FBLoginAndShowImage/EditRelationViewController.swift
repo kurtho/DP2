@@ -22,7 +22,7 @@ class EditRelationViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var birthLabel: UILabel!
     
     var relation = ""
-    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "")
+    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [])
     
     
     override func viewDidLoad() {

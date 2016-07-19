@@ -190,12 +190,15 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
     
     func textFieldDidBeginEditing(textField: UITextField) {
         scrollView.setContentOffset(CGPointMake(0, 250),animated: true)
+        
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
         scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
     }
     //輸入帳密的地方沒有彈起
+
     
 }
+
 

@@ -23,7 +23,7 @@ class EditGenderViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var birthLabel: UILabel!
     
     var gender = ""
-    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "")
+    let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [])
     
     
     override func viewDidLoad() {

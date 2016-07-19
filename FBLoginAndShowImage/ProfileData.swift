@@ -9,15 +9,16 @@
 import Foundation
 
 class ProfileData: NSObject {
-    var name: String = ""
-    var gender: String = ""
-    var age: String = ""
-    var place: String = ""
-    var relation: String = ""
-    var trait: String = ""
-    var content: String = ""
+    var name: String?
+    var gender: String?
+    var age: String?
+    var place: String?
+    var relation: String?
+    var trait: String?
+    var content: String?
+    var userImage: [String]?
     
-    init (name: String, gender: String, age: String, place: String, relation: String ,trait: String, content: String){
+    init (name: String, gender: String, age: String, place: String, relation: String ,trait: String, content: String, userImage: [String]){
         self.name = name
         self.gender = gender
         self.age = age
@@ -25,6 +26,7 @@ class ProfileData: NSObject {
         self.relation = relation
         self.trait = trait
         self.content = content
+        self.userImage = userImage
         }
     
 }
@@ -32,6 +34,7 @@ class ProfileData: NSObject {
 
 class CurrentUser {
     static let shareInstance = CurrentUser()
+//    已先實體化
     var profileData: ProfileData?
     
 }
