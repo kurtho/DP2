@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EdirProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class EdirProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
 
 
@@ -43,7 +43,9 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     @IBOutlet weak var birthTextField: UITextField!
     @IBOutlet weak var placeTextField: UITextField!
     @IBOutlet weak var relationTextField: UITextField!
-    
+    @IBOutlet weak var aboutMe: UITextView!
+    @IBOutlet weak var traitTextField: UITextField!
+
 
 
     @IBAction func genderEdit(sender: AnyObject) {
@@ -75,7 +77,6 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     }
     
     
-    @IBOutlet weak var traitTextField: UITextField!
     
     
     
@@ -112,6 +113,17 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         print("textField return~~\(textField.text)")
         print("singleTon~~~name\(CurrentUser.shareInstance.profileData?.name)")
         return true
+    }
+    
+//  MARK: - textView
+    func textViewDidEndEditing(textView: UITextView) {
+        CurrentUser.shareInstance.profileData?.about = aboutMe.text
+        tableView.setContentOffset(CGPointMake(0, 0), animated: true)
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        tableView.setContentOffset(CGPointMake(0, 160),animated: true)
+
     }
     
     
@@ -220,6 +232,7 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         placeTextField.text = CurrentUser.shareInstance.profileData?.place
         relationTextField.text = CurrentUser.shareInstance.profileData?.relation
         traitTextField.text = CurrentUser.shareInstance.profileData?.trait
+        aboutMe.text = CurrentUser.shareInstance.profileData?.about
     }
     
 

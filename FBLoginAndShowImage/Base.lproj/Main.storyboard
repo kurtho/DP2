@@ -950,6 +950,9 @@
                                                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="1jj-fp-Tt3" id="AHQ-ED-s70"/>
+                                                    </connections>
                                                 </textView>
                                             </subviews>
                                             <constraints>
@@ -972,6 +975,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="tFZ-cA-TAS"/>
                     <connections>
+                        <outlet property="aboutMe" destination="EgY-No-2N0" id="Zsf-Gn-3r7"/>
                         <outlet property="birthTextField" destination="lka-FF-Qbq" id="WNc-5m-VSn"/>
                         <outlet property="genderTextField" destination="kdI-wV-YZ3" id="5H5-33-rWS"/>
                         <outlet property="image1" destination="wdO-EP-N1Z" id="H2Y-6w-QUP"/>

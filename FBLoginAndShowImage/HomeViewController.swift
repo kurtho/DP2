@@ -49,7 +49,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     
-        let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [""])
+        let profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [""], about: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,14 +78,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
 
         contentLabel.text = ProfileImageList.pic[0].description
-//        nameLabel.text = CurrentUser.shareInstance.profileData?.name
-        
-//        ageLabel.text = CurrentUser.shareInstance.profileData?.nameLabel
-        
-        
         
         placeLabel.text = CurrentUser.shareInstance.profileData?.place
-        traitLabel.text = "吃肉、草帽、橡膠、當上海賊王"
+        
         
     }
 
@@ -101,7 +96,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         genderlabel.text = CurrentUser.shareInstance.profileData?.gender
         relationLabel.text = CurrentUser.shareInstance.profileData?.relation
         traitLabel.text = CurrentUser.shareInstance.profileData?.trait
-        
+        contentLabel.text = CurrentUser.shareInstance.profileData?.about
         
         
 //        print("HomeView age~~~\(CurrentUser.shareInstance.profileData?.name)")

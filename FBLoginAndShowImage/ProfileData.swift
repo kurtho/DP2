@@ -17,8 +17,9 @@ class ProfileData: NSObject {
     var trait: String?
     var content: String?
     var userImage: [String]?
+    var about: String?
     
-    init (name: String, gender: String, age: String, place: String, relation: String ,trait: String, content: String, userImage: [String]){
+    init (name: String, gender: String, age: String, place: String, relation: String ,trait: String, content: String, userImage: [String], about: String){
         self.name = name
         self.gender = gender
         self.age = age
@@ -27,6 +28,7 @@ class ProfileData: NSObject {
         self.trait = trait
         self.content = content
         self.userImage = userImage
+        self.about = about
         }
     
 }
