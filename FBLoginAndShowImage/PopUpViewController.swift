@@ -22,6 +22,7 @@ class PopUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         removeAnimate()
         
         CurrentUser.shareInstance.profileData?.age = myBirth
+        NSNotificationCenter.defaultCenter().postNotificationName("birth", object: nil)
 
         print("profileData.age~~\(CurrentUser.shareInstance.profileData?.age)")
     }

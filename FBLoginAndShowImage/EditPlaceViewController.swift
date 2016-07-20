@@ -16,7 +16,8 @@ class EditPlaceViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         removeAnimate()
         
         CurrentUser.shareInstance.profileData?.place = place
-        
+        NSNotificationCenter.defaultCenter().postNotificationName("place", object: nil)
+
 //        print("profileData.age~~\(CurrentUser.shareInstance.profileData?.gender)")
     }
     @IBOutlet weak var birthLabel: UILabel!

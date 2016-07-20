@@ -16,7 +16,8 @@ class EditRelationViewController: UIViewController, UIPickerViewDelegate, UIPick
         removeAnimate()
         
         CurrentUser.shareInstance.profileData?.relation = relation
-        
+        NSNotificationCenter.defaultCenter().postNotificationName("relation", object: nil)
+
         //        print("profileData.age~~\(CurrentUser.shareInstance.profileData?.gender)")
     }
     @IBOutlet weak var birthLabel: UILabel!

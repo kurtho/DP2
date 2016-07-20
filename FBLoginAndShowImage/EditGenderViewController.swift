@@ -17,10 +17,11 @@ class EditGenderViewController: UIViewController, UIPickerViewDelegate, UIPicker
         removeAnimate()
         CurrentUser.shareInstance.profileData?.gender = gender
         
-//        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("EditProfile") as!
-//        EdirProfileTableViewController
-//        popOverVC.view.setNeedsDisplay()
 
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("gender", object: nil)
+        
+        
     }
     @IBOutlet weak var birthLabel: UILabel!
     
@@ -35,7 +36,13 @@ class EditGenderViewController: UIViewController, UIPickerViewDelegate, UIPicker
         //        self.navigationController?.navigationBarHidden = true
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
+//
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(EdirProfileTableViewController.genderChangeNotif), name: "Notif1", object: nil)        
+
     }
+    
+
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

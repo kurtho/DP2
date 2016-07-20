@@ -48,24 +48,32 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
 
     @IBAction func genderEdit(sender: AnyObject) {
         editGenderPopUp()
-        genderTextField.text = CurrentUser.shareInstance.profileData?.gender
-        
     }
-    
-    
+    func genderChangeNotif(notification: NSNotification) {
+        genderTextField.text = CurrentUser.shareInstance.profileData?.gender
+    }
     
     @IBAction func birthEdit(sender: AnyObject) {
         showPopUp()
+    }
+    func birthChangeNotif(notification: NSNotification) {
+        birthTextField.text = CurrentUser.shareInstance.profileData?.age
     }
     
     @IBAction func placeEdit(sender: AnyObject) {
         editPlacePopIp()
     }
-    
+    func placeChangeNotif(notifica: NSNotification) {
+        placeTextField.text = CurrentUser.shareInstance.profileData?.place
+    }
     
     @IBAction func relationEdit(sender: AnyObject) {
         editRelationPopIp()
     }
+    func relationChangeNotif(notif: NSNotification) {
+        relationTextField.text = CurrentUser.shareInstance.profileData?.relation
+    }
+    
     
     @IBOutlet weak var traitTextField: UITextField!
     
@@ -75,6 +83,10 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         singleTon()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(EdirProfileTableViewController.genderChangeNotif), name: "gender", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(EdirProfileTableViewController.birthChangeNotif), name: "birth", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(EdirProfileTableViewController.placeChangeNotif(_:)), name: "place", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(EdirProfileTableViewController.relationChangeNotif(_:)), name: "relation", object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -87,9 +99,7 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         super.didReceiveMemoryWarning()
     }
     
-    func setGender(notification: NSNotification) {
-        genderTextField.text = CurrentUser.shareInstance.profileData?.gender
-    }
+
     
     
 //  MARK: - textField
