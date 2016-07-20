@@ -15,15 +15,17 @@ class EditGenderViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     @IBAction func invisibleButton(sender: AnyObject) {
         removeAnimate()
-//        CurrentUser.shareInstance.profileData = profileData
         CurrentUser.shareInstance.profileData?.gender = gender
         
-        print("profileData.gender~~\(CurrentUser.shareInstance.profileData?.gender)")
+//        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("EditProfile") as!
+//        EdirProfileTableViewController
+//        popOverVC.view.setNeedsDisplay()
+
     }
     @IBOutlet weak var birthLabel: UILabel!
     
     var gender = ""
-//    var profileData = ProfileData(name: "", gender: "", age: "", place: "", relation: "", trait: "", content: "", userImage: [""])
+
     
     
     override func viewDidLoad() {

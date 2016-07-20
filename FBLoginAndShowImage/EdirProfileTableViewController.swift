@@ -45,11 +45,14 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
     @IBOutlet weak var relationTextField: UITextField!
     
 
-    
-    
+
     @IBAction func genderEdit(sender: AnyObject) {
         editGenderPopUp()
-    }    
+        genderTextField.text = CurrentUser.shareInstance.profileData?.gender
+        
+    }
+    
+    
     
     @IBAction func birthEdit(sender: AnyObject) {
         showPopUp()
@@ -74,12 +77,9 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         singleTon()
     }
     
-    
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
         singleTon()
-        
-//        print("birthLabel.text~~~\(birthLabel.text)")
         
     }
     
@@ -87,13 +87,17 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         super.didReceiveMemoryWarning()
     }
     
+    func setGender(notification: NSNotification) {
+        genderTextField.text = CurrentUser.shareInstance.profileData?.gender
+    }
+    
+    
 //  MARK: - textField
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
         CurrentUser.shareInstance.profileData?.name = nameTextField.text!
-        CurrentUser.shareInstance.profileData?.gender = genderTextField.text!
         CurrentUser.shareInstance.profileData?.trait = traitTextField.text!
         print("textField return~~\(textField.text)")
         print("singleTon~~~name\(CurrentUser.shareInstance.profileData?.name)")
@@ -165,7 +169,7 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         popOverVC.view.frame = self.view.frame
         self.view.addSubview(popOverVC.view)
         popOverVC.didMoveToParentViewController(self)
-
+        
     }
     
     func editGenderPopUp() {
@@ -208,61 +212,6 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
         traitTextField.text = CurrentUser.shareInstance.profileData?.trait
     }
     
-    
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
