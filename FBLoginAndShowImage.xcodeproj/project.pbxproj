@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292843CF1D3F35F3001681CD /* MembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292843CE1D3F35F3001681CD /* MembersTableViewController.swift */; };
+		292843D11D3F49CA001681CD /* MembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292843D01D3F49CA001681CD /* MembersTableViewCell.swift */; };
+		292843D41D3F5658001681CD /* MemberInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292843D31D3F5658001681CD /* MemberInfoTableViewController.swift */; };
 		294E35A31D37CC8000F36F65 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E35A21D37CC8000F36F65 /* PopUpViewController.swift */; };
 		294E35E91D3A22DC00F36F65 /* EditGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E35E81D3A22DC00F36F65 /* EditGenderViewController.swift */; };
 		294E35EB1D3A2E5800F36F65 /* EditPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E35EA1D3A2E5800F36F65 /* EditPlaceViewController.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		292843CE1D3F35F3001681CD /* MembersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersTableViewController.swift; sourceTree = "<group>"; };
+		292843D01D3F49CA001681CD /* MembersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersTableViewCell.swift; sourceTree = "<group>"; };
+		292843D31D3F5658001681CD /* MemberInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoTableViewController.swift; sourceTree = "<group>"; };
 		294E35A21D37CC8000F36F65 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		294E35E81D3A22DC00F36F65 /* EditGenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGenderViewController.swift; sourceTree = "<group>"; };
 		294E35EA1D3A2E5800F36F65 /* EditPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPlaceViewController.swift; sourceTree = "<group>"; };
@@ -72,9 +78,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		292843D21D3F561E001681CD /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				292843D01D3F49CA001681CD /* MembersTableViewCell.swift */,
+				29F63A5D1D32A0D300178065 /* SearchCollectionViewCell.swift */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
 		294E35E71D3A226000F36F65 /* ProfileEdit */ = {
 			isa = PBXGroup;
 			children = (
+				294E35A21D37CC8000F36F65 /* PopUpViewController.swift */,
+				294E35E81D3A22DC00F36F65 /* EditGenderViewController.swift */,
+				294E35EA1D3A2E5800F36F65 /* EditPlaceViewController.swift */,
+				294E35EC1D3A348300F36F65 /* EditRelationViewController.swift */,
+				299F1A371D2CF4A7008555EF /* ProfileViewController.swift */,
 			);
 			name = ProfileEdit;
 			sourceTree = "<group>";
@@ -113,7 +133,6 @@
 				298FBF651D23BB8C00F03F4E /* ViewController.swift */,
 				298FBF671D23BB8C00F03F4E /* Main.storyboard */,
 				29F63A381D31091C00178065 /* HomeProfile */,
-				299F1A371D2CF4A7008555EF /* ProfileViewController.swift */,
 				29F63A5B1D329CA000178065 /* Search */,
 				298470B11D2A9D1500913250 /* LocalFile */,
 				29F63A5C1D329CBB00178065 /* Others */,
@@ -128,10 +147,6 @@
 				298FBF811D24250500F03F4E /* HomeViewController.swift */,
 				29FB0E591D368103005FB3A3 /* EdirProfileTableViewController.swift */,
 				294E35E71D3A226000F36F65 /* ProfileEdit */,
-				294E35A21D37CC8000F36F65 /* PopUpViewController.swift */,
-				294E35E81D3A22DC00F36F65 /* EditGenderViewController.swift */,
-				294E35EA1D3A2E5800F36F65 /* EditPlaceViewController.swift */,
-				294E35EC1D3A348300F36F65 /* EditRelationViewController.swift */,
 			);
 			name = HomeProfile;
 			sourceTree = "<group>";
@@ -139,8 +154,10 @@
 		29F63A5B1D329CA000178065 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				292843CE1D3F35F3001681CD /* MembersTableViewController.swift */,
+				292843D31D3F5658001681CD /* MemberInfoTableViewController.swift */,
 				29F63A5F1D32A3EC00178065 /* SearchViewController.swift */,
-				29F63A5D1D32A0D300178065 /* SearchCollectionViewCell.swift */,
+				292843D21D3F561E001681CD /* cell */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -301,7 +318,9 @@
 				29FB0E5A1D368103005FB3A3 /* EdirProfileTableViewController.swift in Sources */,
 				29F63A601D32A3EC00178065 /* SearchViewController.swift in Sources */,
 				299F1A381D2CF4A7008555EF /* ProfileViewController.swift in Sources */,
+				292843D11D3F49CA001681CD /* MembersTableViewCell.swift in Sources */,
 				294E35A31D37CC8000F36F65 /* PopUpViewController.swift in Sources */,
+				292843CF1D3F35F3001681CD /* MembersTableViewController.swift in Sources */,
 				294E35ED1D3A348300F36F65 /* EditRelationViewController.swift in Sources */,
 				294E35EB1D3A2E5800F36F65 /* EditPlaceViewController.swift in Sources */,
 				29F63A5E1D32A0D300178065 /* SearchCollectionViewCell.swift in Sources */,
@@ -310,6 +329,7 @@
 				294E35E91D3A22DC00F36F65 /* EditGenderViewController.swift in Sources */,
 				298FBF641D23BB8C00F03F4E /* AppDelegate.swift in Sources */,
 				298FBF821D24250500F03F4E /* HomeViewController.swift in Sources */,
+				292843D41D3F5658001681CD /* MemberInfoTableViewController.swift in Sources */,
 				299F1A3A1D2CF506008555EF /* ProfileHeadCollectionViewCell.swift in Sources */,
 				29F63A371D30F69C00178065 /* ProfileData.swift in Sources */,
 			);

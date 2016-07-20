@@ -192,7 +192,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        scrollView.setContentOffset(CGPointMake(0, 250),animated: true)
+        scrollView.setContentOffset(CGPointMake(0, 160),animated: true)
         
     }
     
