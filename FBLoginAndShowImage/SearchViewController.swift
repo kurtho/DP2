@@ -13,6 +13,7 @@ import SwiftyJSON
 
 class SearchViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     var petArray = [PetClass]()
+    
 
     @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var collectionView: UICollectionView!

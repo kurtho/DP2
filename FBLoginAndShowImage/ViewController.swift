@@ -92,7 +92,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
     override func viewWillAppear(animated: Bool) {
         self.view.layoutIfNeeded()
         self.logginButton.center = self.fbView.center
-        
+
         //after logout, the logginButton stay still
     }
     override func didReceiveMemoryWarning() {

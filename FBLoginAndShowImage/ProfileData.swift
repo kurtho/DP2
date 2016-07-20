@@ -52,6 +52,21 @@ class profileList {
 
 
 
+class LoginFile {
+    var name: String = ""
+    var address: String = ""
+    var photoLink: String = ""
+    var id: Int = 0
+    var content: String = ""
+    init(name: String, address: String, photoLink: String, id: Int, content: String){
+        self.name = name
+        self.address = address
+        self.photoLink = photoLink
+        self.id = id
+        self.content = content
+    }
+    
+}
 
 
 class PetClass {

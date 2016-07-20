@@ -10,6 +10,8 @@
 		292843CF1D3F35F3001681CD /* MembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292843CE1D3F35F3001681CD /* MembersTableViewController.swift */; };
 		292843D11D3F49CA001681CD /* MembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292843D01D3F49CA001681CD /* MembersTableViewCell.swift */; };
 		292843D41D3F5658001681CD /* MemberInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292843D31D3F5658001681CD /* MemberInfoTableViewController.swift */; };
+		292843F41D3F8796001681CD /* SignUpChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292843F31D3F8796001681CD /* SignUpChooseImageViewController.swift */; };
+		292843F61D3F9778001681CD /* SignUpChooseImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292843F51D3F9778001681CD /* SignUpChooseImageCollectionViewCell.swift */; };
 		294E35A31D37CC8000F36F65 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E35A21D37CC8000F36F65 /* PopUpViewController.swift */; };
 		294E35E91D3A22DC00F36F65 /* EditGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E35E81D3A22DC00F36F65 /* EditGenderViewController.swift */; };
 		294E35EB1D3A2E5800F36F65 /* EditPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E35EA1D3A2E5800F36F65 /* EditPlaceViewController.swift */; };
@@ -37,6 +39,8 @@
 		292843CE1D3F35F3001681CD /* MembersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersTableViewController.swift; sourceTree = "<group>"; };
 		292843D01D3F49CA001681CD /* MembersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersTableViewCell.swift; sourceTree = "<group>"; };
 		292843D31D3F5658001681CD /* MemberInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoTableViewController.swift; sourceTree = "<group>"; };
+		292843F31D3F8796001681CD /* SignUpChooseImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpChooseImageViewController.swift; sourceTree = "<group>"; };
+		292843F51D3F9778001681CD /* SignUpChooseImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpChooseImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		294E35A21D37CC8000F36F65 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		294E35E81D3A22DC00F36F65 /* EditGenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGenderViewController.swift; sourceTree = "<group>"; };
 		294E35EA1D3A2E5800F36F65 /* EditPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPlaceViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			children = (
 				298FBF631D23BB8C00F03F4E /* AppDelegate.swift */,
 				298FBF651D23BB8C00F03F4E /* ViewController.swift */,
+				292843F31D3F8796001681CD /* SignUpChooseImageViewController.swift */,
+				292843F51D3F9778001681CD /* SignUpChooseImageCollectionViewCell.swift */,
 				298FBF671D23BB8C00F03F4E /* Main.storyboard */,
 				29F63A381D31091C00178065 /* HomeProfile */,
 				29F63A5B1D329CA000178065 /* Search */,
@@ -319,9 +325,11 @@
 				29F63A601D32A3EC00178065 /* SearchViewController.swift in Sources */,
 				299F1A381D2CF4A7008555EF /* ProfileViewController.swift in Sources */,
 				292843D11D3F49CA001681CD /* MembersTableViewCell.swift in Sources */,
+				292843F61D3F9778001681CD /* SignUpChooseImageCollectionViewCell.swift in Sources */,
 				294E35A31D37CC8000F36F65 /* PopUpViewController.swift in Sources */,
 				292843CF1D3F35F3001681CD /* MembersTableViewController.swift in Sources */,
 				294E35ED1D3A348300F36F65 /* EditRelationViewController.swift in Sources */,
+				292843F41D3F8796001681CD /* SignUpChooseImageViewController.swift in Sources */,
 				294E35EB1D3A2E5800F36F65 /* EditPlaceViewController.swift in Sources */,
 				29F63A5E1D32A0D300178065 /* SearchCollectionViewCell.swift in Sources */,
 				298FBF661D23BB8C00F03F4E /* ViewController.swift in Sources */,
