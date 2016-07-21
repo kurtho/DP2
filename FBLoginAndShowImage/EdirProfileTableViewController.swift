@@ -238,12 +238,12 @@ class EdirProfileTableViewController: UITableViewController, UIImagePickerContro
 
 }
 
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
+extension UITableViewController {
+    override func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
-    func dismissKeyboard() {
+    override func dismissKeyboard() {
         view.endEditing(true)
     }
 }

@@ -13,6 +13,8 @@ class SignUpChooseImageViewController: UIViewController, UICollectionViewDataSou
     @IBAction func backWard(sender: AnyObject) {
     }
     @IBAction func forWard(sender: AnyObject) {
+        
+        
         choose += 1
         print("choose~~\(choose)")
     }
@@ -23,13 +25,19 @@ class SignUpChooseImageViewController: UIViewController, UICollectionViewDataSou
     
     
     
-    
+//    var visibleItems: [AnyObject] = self.collectionView.indexPathsForVisibleItems()
+//    var currentItem: NSIndexPath = visibleItems[0] as! NSIndexPath
+//    var nextItem: NSIndexPath = NSIndexPath.indexPathForItem(currentItem.item+1, inSection: currentItem.section)
+//    self.collectionView.scrollToItemAtIndexPath(nextItem, atScrollPosition: UICollectionViewScrollPositionTop, animated: true)
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.layer.cornerRadius = self.collectionView.frame.size.width/2
         self.collectionView.clipsToBounds = true
+
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,22 +62,18 @@ class SignUpChooseImageViewController: UIViewController, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ProfileCell", forIndexPath: indexPath) as! SignUpChooseImageCollectionViewCell
         
         cell.chooseImage.image = UIImage(named: ProfilePictureList.pic[choose].name)
-        loadViewIfNeeded()
+        
+        
+        
         return cell
     }
 
+
+    
+    
     
     var choose = 0
-//    var tempImage: UIImage
-//    
-//    func showImage() {
-//        switch choose {
-//        case 0:
-//            <#code#>
-//        default:
-//            <#code#>
-//        }
-//    }
+
     
 
     /*

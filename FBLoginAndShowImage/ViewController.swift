@@ -27,38 +27,51 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var forgotPassword: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var goBack: UIButton!
 
     
     @IBAction func LoginActionButton(sender: AnyObject) {
         login()
     }
 
-
+    
     
     @IBAction func createAccountButton(sender: AnyObject) {
-        FIRAuth.auth()?.createUserWithEmail(accountField.text!, password: passwordField.text!, completion: {
-            user, error in
-            if error != nil {
-                self.accountRepeatly()
-
-//                self.login()
-                print("123124")
-//                                means accout has been created
-            }else {
-                
-                print("user created")
-                self.login()
-            }
-            
-        })
+        self.createAccountButton.hidden = true
+        self.forgotPassword.hidden = true
+        self.userName.hidden = false
+        self.goBack.hidden = false
+        accountLoginButton.setTitle("Sign Up", forState: .Normal)
         
+//        FIRAuth.auth()?.createUserWithEmail(accountField.text!, password: passwordField.text!, completion: {
+//            user, error in
+//            if error != nil {
+//                self.accountRepeatly()
+////                self.login()
+//                print("123124")
+////                                means accout has been created
+//            }else {
+//                print("user created")
+//                self.login()
+//            }
+//        })
     }
     
+    @IBAction func goBack(sender: AnyObject) {
+        self.createAccountButton.hidden = false
+        self.forgotPassword.hidden = false
+        self.userName.hidden = true
+        self.goBack.hidden = true
+        self.accountLoginButton.setTitle("Sign In", forState: .Normal)
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.userName.hidden = true
+        self.goBack.hidden = true
+
         logginButton.hidden = true
         
         FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
@@ -90,6 +103,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
 //         Do any additional setup after loading the view, typically from a nib.
     }
     override func viewWillAppear(animated: Bool) {
+        
         self.view.layoutIfNeeded()
         self.logginButton.center = self.fbView.center
 
@@ -190,18 +204,22 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
         textField.resignFirstResponder()
         return true
     }
-    
     func textFieldDidBeginEditing(textField: UITextField) {
         scrollView.setContentOffset(CGPointMake(0, 160),animated: true)
-        
     }
-    
     func textFieldDidEndEditing(textField: UITextField) {
         scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
     }
     //輸入帳密的地方沒有彈起
-
     
 }
 
-
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
