@@ -29,6 +29,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var goBack: UIButton!
+    
 
     
     @IBAction func LoginActionButton(sender: AnyObject) {
@@ -89,6 +90,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
 
             }
             self.logginButton.center = self.fbView.center
+            
             self.view.addSubview(self.logginButton)
             
             self.logginButton.readPermissions = ["public_profile","email","user_friends"]
@@ -106,7 +108,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, UITextFieldDel
         
         self.view.layoutIfNeeded()
         self.logginButton.center = self.fbView.center
+//        self.logginButton.frame = CGRectMake(0,0,220,45)
+        self.logginButton.sizeThatFits(CGSize())
+        
 
+        
         //after logout, the logginButton stay still
     }
     override func didReceiveMemoryWarning() {

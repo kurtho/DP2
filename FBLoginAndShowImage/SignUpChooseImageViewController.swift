@@ -7,19 +7,35 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FBSDKCoreKit
 
 class SignUpChooseImageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var fbName: UILabel!
+    
+    
+    @IBAction func logOut(sender: AnyObject) {
+        try! FIRAuth.auth()!.signOut()
+        FBSDKAccessToken.setCurrentAccessToken(nil)
+        
+        let mainStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController : UIViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("LogginView")
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func backWard(sender: AnyObject) {
+        choose -= 1
+        print("choose~~\(choose)")
     }
     @IBAction func forWard(sender: AnyObject) {
-        
-        
         choose += 1
         print("choose~~\(choose)")
     }
     @IBAction func signUp(sender: AnyObject) {
-        choose -= 1
+
+   
     }
 
     
@@ -36,6 +52,23 @@ class SignUpChooseImageViewController: UIViewController, UICollectionViewDataSou
         self.collectionView.layer.cornerRadius = self.collectionView.frame.size.width/2
         self.collectionView.clipsToBounds = true
 
+        if let user = FIRAuth.auth()?.currentUser {
+            let name = user.displayName
+            //            let email = user.email
+            //            let uid = user.uid;
+            self.fbName.text = name
+//            let photoUrl = user.photoURL
+//            if let photoURL = photoUrl {
+//                if let data = NSData(contentsOfURL: photoURL) {
+//                    self.fbProfilePic.image = UIImage(data: data)
+//                }
+//            }
+//            // Do any additional setup after loading the view.
+//            
+//        } else {
+//            // No user is signed in.
+//        }
+        }
 
         
     }

@@ -12,6 +12,7 @@
 		292843D41D3F5658001681CD /* MemberInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292843D31D3F5658001681CD /* MemberInfoTableViewController.swift */; };
 		292843F41D3F8796001681CD /* SignUpChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292843F31D3F8796001681CD /* SignUpChooseImageViewController.swift */; };
 		292843F61D3F9778001681CD /* SignUpChooseImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292843F51D3F9778001681CD /* SignUpChooseImageCollectionViewCell.swift */; };
+		292843FA1D408095001681CD /* ProfileSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292843F91D408095001681CD /* ProfileSettingTableViewController.swift */; };
 		294E35A31D37CC8000F36F65 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E35A21D37CC8000F36F65 /* PopUpViewController.swift */; };
 		294E35E91D3A22DC00F36F65 /* EditGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E35E81D3A22DC00F36F65 /* EditGenderViewController.swift */; };
 		294E35EB1D3A2E5800F36F65 /* EditPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E35EA1D3A2E5800F36F65 /* EditPlaceViewController.swift */; };
@@ -19,7 +20,6 @@
 		298470B31D2A9D4B00913250 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298470B21D2A9D4B00913250 /* ProfileImage.swift */; };
 		298FBF641D23BB8C00F03F4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298FBF631D23BB8C00F03F4E /* AppDelegate.swift */; };
 		298FBF661D23BB8C00F03F4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298FBF651D23BB8C00F03F4E /* ViewController.swift */; };
-		298FBF691D23BB8C00F03F4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298FBF671D23BB8C00F03F4E /* Main.storyboard */; };
 		298FBF6B1D23BB8C00F03F4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FBF6A1D23BB8C00F03F4E /* Assets.xcassets */; };
 		298FBF6E1D23BB8C00F03F4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298FBF6C1D23BB8C00F03F4E /* LaunchScreen.storyboard */; };
 		298FBF761D23BC5B00F03F4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 298FBF751D23BC5B00F03F4E /* GoogleService-Info.plist */; };
@@ -41,6 +41,7 @@
 		292843D31D3F5658001681CD /* MemberInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoTableViewController.swift; sourceTree = "<group>"; };
 		292843F31D3F8796001681CD /* SignUpChooseImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpChooseImageViewController.swift; sourceTree = "<group>"; };
 		292843F51D3F9778001681CD /* SignUpChooseImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpChooseImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		292843F91D408095001681CD /* ProfileSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingTableViewController.swift; sourceTree = "<group>"; };
 		294E35A21D37CC8000F36F65 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		294E35E81D3A22DC00F36F65 /* EditGenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGenderViewController.swift; sourceTree = "<group>"; };
 		294E35EA1D3A2E5800F36F65 /* EditPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPlaceViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		298FBF601D23BB8C00F03F4E /* FBLoginAndShowImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBLoginAndShowImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		298FBF631D23BB8C00F03F4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		298FBF651D23BB8C00F03F4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		298FBF681D23BB8C00F03F4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		298FBF6A1D23BB8C00F03F4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		298FBF6D1D23BB8C00F03F4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		298FBF6F1D23BB8C00F03F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,13 +82,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		292843D21D3F561E001681CD /* cell */ = {
+		292843D21D3F561E001681CD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				292843D01D3F49CA001681CD /* MembersTableViewCell.swift */,
 				29F63A5D1D32A0D300178065 /* SearchCollectionViewCell.swift */,
 			);
-			name = cell;
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		292843F71D408009001681CD /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				29F63A5F1D32A3EC00178065 /* SearchViewController.swift */,
+				292843CE1D3F35F3001681CD /* MembersTableViewController.swift */,
+				292843D31D3F5658001681CD /* MemberInfoTableViewController.swift */,
+			);
+			name = Old;
+			sourceTree = "<group>";
+		};
+		292843F81D408035001681CD /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				29FB0E591D368103005FB3A3 /* EdirProfileTableViewController.swift */,
+				299F1A391D2CF506008555EF /* ProfileHeadCollectionViewCell.swift */,
+				298FBF811D24250500F03F4E /* HomeViewController.swift */,
+			);
+			name = Old;
+			sourceTree = "<group>";
+		};
+		292843FB1D408106001681CD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		294E35E71D3A226000F36F65 /* ProfileEdit */ = {
@@ -115,7 +142,7 @@
 		298FBF571D23BB8C00F03F4E = {
 			isa = PBXGroup;
 			children = (
-				298FBF621D23BB8C00F03F4E /* FBLoginAndShowImage */,
+				298FBF621D23BB8C00F03F4E /* Login */,
 				298FBF611D23BB8C00F03F4E /* Products */,
 				EE3F2BCD0E1FF29EC8BDAD63 /* Pods */,
 				4F5E149091A15B963DD77D70 /* Frameworks */,
@@ -130,28 +157,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		298FBF621D23BB8C00F03F4E /* FBLoginAndShowImage */ = {
+		298FBF621D23BB8C00F03F4E /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				298FBF631D23BB8C00F03F4E /* AppDelegate.swift */,
 				298FBF651D23BB8C00F03F4E /* ViewController.swift */,
 				292843F31D3F8796001681CD /* SignUpChooseImageViewController.swift */,
 				292843F51D3F9778001681CD /* SignUpChooseImageCollectionViewCell.swift */,
-				298FBF671D23BB8C00F03F4E /* Main.storyboard */,
 				29F63A381D31091C00178065 /* HomeProfile */,
 				29F63A5B1D329CA000178065 /* Search */,
 				298470B11D2A9D1500913250 /* LocalFile */,
 				29F63A5C1D329CBB00178065 /* Others */,
 			);
+			name = Login;
 			path = FBLoginAndShowImage;
 			sourceTree = "<group>";
 		};
 		29F63A381D31091C00178065 /* HomeProfile */ = {
 			isa = PBXGroup;
 			children = (
-				299F1A391D2CF506008555EF /* ProfileHeadCollectionViewCell.swift */,
-				298FBF811D24250500F03F4E /* HomeViewController.swift */,
-				29FB0E591D368103005FB3A3 /* EdirProfileTableViewController.swift */,
+				292843F91D408095001681CD /* ProfileSettingTableViewController.swift */,
+				292843FB1D408106001681CD /* Cell */,
+				292843F81D408035001681CD /* Old */,
 				294E35E71D3A226000F36F65 /* ProfileEdit */,
 			);
 			name = HomeProfile;
@@ -160,10 +187,8 @@
 		29F63A5B1D329CA000178065 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				292843CE1D3F35F3001681CD /* MembersTableViewController.swift */,
-				292843D31D3F5658001681CD /* MemberInfoTableViewController.swift */,
-				29F63A5F1D32A3EC00178065 /* SearchViewController.swift */,
-				292843D21D3F561E001681CD /* cell */,
+				292843F71D408009001681CD /* Old */,
+				292843D21D3F561E001681CD /* Cell */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -262,7 +287,6 @@
 				298FBF6E1D23BB8C00F03F4E /* LaunchScreen.storyboard in Resources */,
 				298FBF761D23BC5B00F03F4E /* GoogleService-Info.plist in Resources */,
 				298FBF6B1D23BB8C00F03F4E /* Assets.xcassets in Resources */,
-				298FBF691D23BB8C00F03F4E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +353,7 @@
 				294E35A31D37CC8000F36F65 /* PopUpViewController.swift in Sources */,
 				292843CF1D3F35F3001681CD /* MembersTableViewController.swift in Sources */,
 				294E35ED1D3A348300F36F65 /* EditRelationViewController.swift in Sources */,
+				292843FA1D408095001681CD /* ProfileSettingTableViewController.swift in Sources */,
 				292843F41D3F8796001681CD /* SignUpChooseImageViewController.swift in Sources */,
 				294E35EB1D3A2E5800F36F65 /* EditPlaceViewController.swift in Sources */,
 				29F63A5E1D32A0D300178065 /* SearchCollectionViewCell.swift in Sources */,
@@ -346,14 +371,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		298FBF671D23BB8C00F03F4E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				298FBF681D23BB8C00F03F4E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		298FBF6C1D23BB8C00F03F4E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
